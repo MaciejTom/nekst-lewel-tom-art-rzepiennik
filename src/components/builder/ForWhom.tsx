@@ -65,7 +65,7 @@ function ForWhom2x2Grid({ config }: ForWhomVariantProps) {
               </span>
             </div>
           )}
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
             {config.title}<br />
             {config.titleAccent && (
               <span className="text-muted-foreground">{config.titleAccent}</span>
@@ -170,7 +170,7 @@ function ForWhomImageCard({ item, index }: ForWhomCardProps) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-black/20" />
         {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:40px_40px]" />
       </div>
@@ -190,7 +190,7 @@ function ForWhomImageCard({ item, index }: ForWhomCardProps) {
       <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
         {/* Top Row */}
         <div className="flex justify-end">
-          <div className="bg-black/60 backdrop-blur-sm p-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+          <div className="bg-background/60 backdrop-blur-sm p-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
             <ArrowUpRight className="text-primary w-5 h-5" />
           </div>
         </div>
@@ -198,7 +198,7 @@ function ForWhomImageCard({ item, index }: ForWhomCardProps) {
         {/* Bottom Content */}
         <div>
           {/* Title */}
-          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors duration-300">
+          <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
             {item.title}
           </h3>
 
@@ -256,7 +256,7 @@ function ForWhomSimpleCard({ item, index }: ForWhomCardProps) {
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">
+        <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
           {item.title}
         </h3>
         <p className="text-sm text-muted-foreground mb-4">

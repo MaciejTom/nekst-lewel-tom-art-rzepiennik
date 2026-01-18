@@ -77,7 +77,7 @@ function Process4ColumnTimeline({ config }: ProcessVariantProps) {
           <p className="text-muted-foreground mb-4">Masz gotowy projekt?</p>
           <a
             href={config.bottomCta.href}
-            className="inline-flex items-center gap-2 text-white font-bold border-b border-primary pb-1 hover:text-primary transition-colors"
+            className="inline-flex items-center gap-2 text-foreground font-bold border-b border-primary pb-1 hover:text-primary transition-colors"
           >
             {config.bottomCta.text} <span aria-hidden="true">&rarr;</span>
           </a>
@@ -107,7 +107,7 @@ function ProcessVerticalSteps({ config }: ProcessVariantProps) {
             <div className="mt-8">
               <a
                 href={config.bottomCta.href}
-                className="inline-flex items-center gap-2 bg-primary text-black px-6 py-3 font-bold hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 font-bold hover:bg-primary/90 transition-colors"
               >
                 {config.bottomCta.text} <span aria-hidden="true">&rarr;</span>
               </a>
@@ -141,7 +141,7 @@ function ProcessVerticalSteps({ config }: ProcessVariantProps) {
                   <div className="bg-card border border-border p-6 hover:border-primary/30 transition-colors">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-primary font-mono text-sm">{step.number}</span>
-                      <h3 className="text-lg font-bold text-white">{step.title}</h3>
+                      <h3 className="text-lg font-bold text-foreground">{step.title}</h3>
                     </div>
                     <div className="text-xs font-mono text-primary mb-3 uppercase tracking-wider">
                       {step.subtitle}
@@ -195,7 +195,7 @@ function ProcessNumberedList({ config }: ProcessVariantProps) {
               <div className="flex-1 pt-2">
                 <div className="flex items-center gap-3 mb-2">
                   <Icon className="w-5 h-5 text-primary" />
-                  <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {step.title}
                   </h3>
                 </div>
@@ -213,7 +213,7 @@ function ProcessNumberedList({ config }: ProcessVariantProps) {
         <div className="mt-16 text-center">
           <a
             href={config.bottomCta.href}
-            className="inline-flex items-center gap-2 text-white font-bold border-b border-primary pb-1 hover:text-primary transition-colors"
+            className="inline-flex items-center gap-2 text-foreground font-bold border-b border-primary pb-1 hover:text-primary transition-colors"
           >
             {config.bottomCta.text} <span aria-hidden="true">&rarr;</span>
           </a>
@@ -249,7 +249,7 @@ function ProcessTimelineCard({ step, index }: ProcessCardProps) {
 
       <div className="bg-card border border-border p-8 h-full hover:border-primary/30 transition-colors duration-300 relative overflow-hidden">
         {/* Background Big Number */}
-        <div className="absolute -right-4 -top-6 text-9xl font-bold text-white/5 select-none pointer-events-none group-hover:text-primary/10 transition-colors duration-500">
+        <div className="absolute -right-4 -top-6 text-9xl font-bold text-foreground/5 select-none pointer-events-none group-hover:text-primary/10 transition-colors duration-500">
           {step.number}
         </div>
 
@@ -260,7 +260,7 @@ function ProcessTimelineCard({ step, index }: ProcessCardProps) {
 
         {/* Content */}
         <div className="relative z-20">
-          <h3 className="text-xl font-bold text-white mb-1">
+          <h3 className="text-xl font-bold text-foreground mb-1">
             {step.title}
           </h3>
           <div className="text-xs font-mono text-primary mb-4 uppercase tracking-wider">

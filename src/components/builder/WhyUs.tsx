@@ -98,7 +98,7 @@ function WhyUs2ColumnSplit({ config }: WhyUsVariantProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
               {config.title} <br />
               {config.titleAccent && (
                 <span className="text-primary">{config.titleAccent}</span>
@@ -160,7 +160,7 @@ function WhyUsIconCard({ item, index }: WhyUsCardProps) {
             src={item.icon}
             alt={item.title}
             fill
-            className="object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
+            className="object-contain dark:filter dark:brightness-0 dark:invert opacity-80 group-hover:opacity-100 transition-opacity"
           />
         ) : (
           <div className="w-full h-full bg-primary/10 rounded-sm flex items-center justify-center">
@@ -170,7 +170,7 @@ function WhyUsIconCard({ item, index }: WhyUsCardProps) {
       </div>
 
       {/* Title */}
-      <h3 className="font-display text-lg text-white mb-3 group-hover:text-primary transition-colors tracking-wide">
+      <h3 className="font-display text-lg text-foreground mb-3 group-hover:text-primary transition-colors tracking-wide">
         {item.title}
       </h3>
 
@@ -208,7 +208,7 @@ function WhyUsLargeCard({ item, index }: WhyUsCardProps) {
               src={item.icon}
               alt={item.title}
               fill
-              className="object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
+              className="object-contain dark:filter dark:brightness-0 dark:invert opacity-80 group-hover:opacity-100 transition-opacity"
             />
           ) : (
             <div className="w-full h-full bg-primary/10 rounded-sm flex items-center justify-center">
@@ -218,7 +218,7 @@ function WhyUsLargeCard({ item, index }: WhyUsCardProps) {
         </div>
 
         {/* Title */}
-        <h3 className="font-display text-xl text-white mb-4 group-hover:text-primary transition-colors tracking-wide">
+        <h3 className="font-display text-xl text-foreground mb-4 group-hover:text-primary transition-colors tracking-wide">
           {item.title}
         </h3>
 
@@ -252,7 +252,7 @@ function WhyUsBentoCard({ item, index, colSpan }: WhyUsCardProps & { colSpan: nu
             src={item.icon}
             alt={item.title}
             fill
-            className="object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
+            className="object-contain dark:filter dark:brightness-0 dark:invert opacity-80 group-hover:opacity-100 transition-opacity"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-primary">
@@ -262,7 +262,7 @@ function WhyUsBentoCard({ item, index, colSpan }: WhyUsCardProps & { colSpan: nu
       </div>
 
       <div>
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+        <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
           {item.title}
         </h3>
         <p className="text-sm text-muted-foreground">

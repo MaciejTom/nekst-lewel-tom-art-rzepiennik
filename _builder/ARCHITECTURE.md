@@ -68,27 +68,67 @@ Powtarza się w KAŻDEJ sekcji:
 
 ---
 
-## Hierarchia zmiennych
+## CSS Variables - Podział STAŁE / ZMIENNE
+
+### Źródło zmiennych
+```
+output-v4/5-tweak.css  →  globals.css (część ZMIENNE)
+```
+
+### ZMIENNE (per klient) - z tweak.css
+
+| Kategoria | Zmienne | Przykład |
+|-----------|---------|----------|
+| **Kolory główne** | `--background`, `--foreground`, `--card`, `--card-foreground` | `#f5f5f5`, `#1a1a1a` |
+| **Kolory semantyczne** | `--primary`, `--secondary`, `--muted`, `--accent`, `--destructive` + `-foreground` | `#1e3a5f`, `#d4a84b` |
+| **Kolory UI** | `--border`, `--input`, `--ring`, `--popover` | `#c2c2c2` |
+| **Kolory charts** | `--chart-1` ... `--chart-5` | paleta 5 kolorów |
+| **Kolory sidebar** | `--sidebar-*` (8 zmiennych) | jak główne |
+| **Fonty** | `--font-sans`, `--font-serif`, `--font-mono` | `"Inter"`, `"Roboto Slab"` |
+| **Radius** | `--radius` | `0.25rem` (industrial: `0`) |
+| **Shadows** | `--shadow-2xs` ... `--shadow-2xl`, `--shadow-opacity` | cienie z opacity |
+
+**~45 zmiennych per motyw (light lub dark)**
+
+### STAŁE (w bibliotece) - zawsze te same
+
+| Kategoria | Zmienne | Wartość |
+|-----------|---------|---------|
+| **Spacing** | `--spacing` | `0.25rem` |
+| **Tracking** | `--tracking-normal` | `0em` |
+| **@theme inline** | mapowania `--color-*: var(--*)` | struktura |
+| **Radius calc** | `--radius-sm`, `-md`, `-lg`, `-xl` | `calc(var(--radius) ± Npx)` |
+| **Shadow refs** | `--shadow-*: var(--shadow-*)` | referencje |
+
+### Flow aktualizacji
+
+```
+1. Dostajesz output-v4/5-tweak.css
+2. Kopiujesz :root { } do globals.css (nadpisujesz ZMIENNE)
+3. Jeśli dark mode: kopiujesz też .dark { }
+4. STAŁE zostają bez zmian
+```
+
+---
+
+## Hierarchia zmiennych (content)
 
 ### POZIOM 1: GLOBAL (theme) - z globals.css
 ```
 colors:
-  --primary: #FF5E00
-  --background: #0a0a0a
-  --card: #171717
-  --border: #262626
-  --foreground: #FAFAFA
-  --muted-foreground: #a3a3a3
+  --primary: #1e3a5f (Steel Blue)
+  --accent: #d4a84b (Construction Gold)
+  --background: #f5f5f5 (Concrete Light)
+  --foreground: #1a1a1a
 
 fonts:
-  --font-display: Bebas Neue
-  --font-body: Work Sans
+  --font-sans: Inter
+  --font-serif: Roboto Slab
 
 layout:
-  containerWidth: 1280px
-  sectionPadding: py-24
+  containerWidth: 1200px
+  sectionPadding: py-16 md:py-24
   gridSize: 40px
-  gridOpacity: 0.07
 ```
 
 ### POZIOM 2: SITE CONFIG (meta)

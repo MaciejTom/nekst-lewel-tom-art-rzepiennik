@@ -1,0 +1,127 @@
+{
+  "direction": "INDUSTRIAL",
+  "reasoning": "B2B firma budowlana, specjalizacja żelbetowa, klienci to kierownicy budów i inżynierowie",
+
+  "colors": {
+    "primary": {
+      "value": "#1E3A5F",
+      "name": "Steel Blue",
+      "usage": "Nagłówki, CTA, elementy kluczowe",
+      "reasoning": "Profesjonalny, solidny, kojarzy się z przemysłem i stalą zbrojeniową"
+    },
+    "secondary": {
+      "value": "#D4A84B",
+      "name": "Construction Gold",
+      "usage": "Akcenty, ikony, wyróżnienia",
+      "reasoning": "Ciepły akcent dla kontrastu, kojarzy się z jakością i rzemiosłem"
+    },
+    "background": {
+      "value": "#F5F5F5",
+      "name": "Concrete Light",
+      "usage": "Tło główne",
+      "reasoning": "Neutralne, czyste, kojarzy się z betonem"
+    },
+    "surface": {
+      "value": "#FFFFFF",
+      "name": "White",
+      "usage": "Karty, sekcje wyróżnione"
+    },
+    "text": {
+      "primary": "#1A1A1A",
+      "secondary": "#4A4A4A",
+      "muted": "#6B6B6B"
+    },
+    "semantic": {
+      "success": "#2E7D32",
+      "warning": "#F57C00",
+      "error": "#C62828"
+    }
+  },
+
+  "typography": {
+    "headings": {
+      "family": "Inter",
+      "weights": [600, 700],
+      "reasoning": "Czytelna, profesjonalna, dobra na ekranach"
+    },
+    "body": {
+      "family": "Inter",
+      "weights": [400, 500],
+      "reasoning": "Spójna z nagłówkami, dobra czytelność"
+    },
+    "scale": {
+      "h1": "2.5rem",
+      "h2": "2rem",
+      "h3": "1.5rem",
+      "h4": "1.25rem",
+      "body": "1rem",
+      "small": "0.875rem"
+    }
+  },
+
+  "spacing": {
+    "base": "8px",
+    "scale": [8, 16, 24, 32, 48, 64, 96],
+    "section_padding": "64px",
+    "container_max_width": "1200px"
+  },
+
+  "borders": {
+    "radius": {
+      "small": "4px",
+      "medium": "8px",
+      "large": "12px"
+    },
+    "reasoning": "Ostre kąty dla INDUSTRIAL direction, ale nie całkowicie kwadratowe"
+  },
+
+  "shadows": {
+    "card": "0 2px 8px rgba(0,0,0,0.08)",
+    "elevated": "0 4px 16px rgba(0,0,0,0.12)",
+    "reasoning": "Subtelne cienie, nie przesadzone"
+  },
+
+  "components": {
+    "buttons": {
+      "primary": {
+        "background": "#1E3A5F",
+        "text": "#FFFFFF",
+        "hover": "#2A4A73",
+        "border_radius": "4px",
+        "padding": "12px 24px"
+      },
+      "secondary": {
+        "background": "transparent",
+        "text": "#1E3A5F",
+        "border": "2px solid #1E3A5F",
+        "hover_background": "#1E3A5F",
+        "hover_text": "#FFFFFF"
+      }
+    },
+    "cards": {
+      "background": "#FFFFFF",
+      "border_radius": "8px",
+      "shadow": "0 2px 8px rgba(0,0,0,0.08)",
+      "padding": "24px"
+    },
+    "inputs": {
+      "border": "1px solid #D1D1D1",
+      "border_radius": "4px",
+      "focus_border": "#1E3A5F",
+      "padding": "12px 16px"
+    }
+  },
+
+  "imagery": {
+    "style": "Autentyczne zdjęcia realizacji, konstrukcje w trakcie budowy",
+    "filters": "Brak filtrów - naturalne kolory",
+    "overlays": "Ciemny gradient na hero dla czytelności tekstu",
+    "icons": "Lucide lub Heroicons - proste, liniowe"
+  },
+
+  "metadata": {
+    "designer_version": "2.0",
+    "generated_at": "2026-01-09",
+    "quality_flow": true
+  }
+}

@@ -52,7 +52,7 @@ function ContactSplitWithMap({ config, meta }: ContactVariantProps) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* Contact Info */}
         <div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
             {config.title} <br />
             {config.titleAccent && (
               <span className="text-primary">{config.titleAccent}</span>
@@ -81,7 +81,7 @@ function ContactSplitWithMap({ config, meta }: ContactVariantProps) {
                   </h3>
                   <a
                     href={`tel:${meta.phone.replace(/\s/g, '')}`}
-                    className="text-2xl font-bold text-white group-hover:text-primary transition-colors"
+                    className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors"
                   >
                     {meta.phone}
                   </a>
@@ -105,7 +105,7 @@ function ContactSplitWithMap({ config, meta }: ContactVariantProps) {
                   </h3>
                   <a
                     href={`mailto:${meta.email}`}
-                    className="text-xl font-bold text-white group-hover:text-primary transition-colors"
+                    className="text-xl font-bold text-foreground group-hover:text-primary transition-colors"
                   >
                     {meta.email}
                   </a>
@@ -126,7 +126,7 @@ function ContactSplitWithMap({ config, meta }: ContactVariantProps) {
                   <div className="flex items-start gap-4 p-4 border border-border bg-card/30">
                     <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="text-white font-bold">{meta.address.city}</p>
+                      <p className="text-foreground font-bold">{meta.address.city}</p>
                       <p className="text-xs text-muted-foreground">
                         {meta.address.street}, {meta.address.zip}
                       </p>
@@ -137,7 +137,7 @@ function ContactSplitWithMap({ config, meta }: ContactVariantProps) {
                   <div className="flex items-start gap-4 p-4 border border-border bg-card/30">
                     <FileText className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="text-white font-bold">NIP</p>
+                      <p className="text-foreground font-bold">NIP</p>
                       <p className="text-xs text-muted-foreground">{meta.nip}</p>
                     </div>
                   </div>
@@ -170,7 +170,7 @@ function ContactSplitWithMap({ config, meta }: ContactVariantProps) {
 
             {/* Overlay with address */}
             <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur-sm p-4 border border-border z-20">
-              <p className="text-white font-bold">{meta.name}</p>
+              <p className="text-foreground font-bold">{meta.name}</p>
               <p className="text-sm text-muted-foreground">
                 {meta.address.street}, {meta.address.zip} {meta.address.city}
               </p>
@@ -202,7 +202,7 @@ function ContactFormOnly({ config, meta }: ContactVariantProps) {
           {config.showPhone && (
             <a
               href={`tel:${meta.phone.replace(/\s/g, '')}`}
-              className="flex items-center gap-2 text-white hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
             >
               <Phone className="w-5 h-5 text-primary" />
               {meta.phone}
@@ -211,7 +211,7 @@ function ContactFormOnly({ config, meta }: ContactVariantProps) {
           {config.showEmail && (
             <a
               href={`mailto:${meta.email}`}
-              className="flex items-center gap-2 text-white hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
             >
               <Mail className="w-5 h-5 text-primary" />
               {meta.email}
@@ -226,7 +226,7 @@ function ContactFormOnly({ config, meta }: ContactVariantProps) {
               <label className="block text-sm text-muted-foreground mb-2">Imię i nazwisko</label>
               <input
                 type="text"
-                className="w-full bg-card border border-border px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
+                className="w-full bg-card border border-border px-4 py-3 text-foreground focus:border-primary focus:outline-none transition-colors"
                 placeholder="Jan Kowalski"
               />
             </div>
@@ -234,7 +234,7 @@ function ContactFormOnly({ config, meta }: ContactVariantProps) {
               <label className="block text-sm text-muted-foreground mb-2">Telefon</label>
               <input
                 type="tel"
-                className="w-full bg-card border border-border px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
+                className="w-full bg-card border border-border px-4 py-3 text-foreground focus:border-primary focus:outline-none transition-colors"
                 placeholder="600 000 000"
               />
             </div>
@@ -243,7 +243,7 @@ function ContactFormOnly({ config, meta }: ContactVariantProps) {
             <label className="block text-sm text-muted-foreground mb-2">Email</label>
             <input
               type="email"
-              className="w-full bg-card border border-border px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
+              className="w-full bg-card border border-border px-4 py-3 text-foreground focus:border-primary focus:outline-none transition-colors"
               placeholder="jan@example.com"
             />
           </div>
@@ -251,13 +251,13 @@ function ContactFormOnly({ config, meta }: ContactVariantProps) {
             <label className="block text-sm text-muted-foreground mb-2">Wiadomość</label>
             <textarea
               rows={5}
-              className="w-full bg-card border border-border px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors resize-none"
+              className="w-full bg-card border border-border px-4 py-3 text-foreground focus:border-primary focus:outline-none transition-colors resize-none"
               placeholder="Opisz swój projekt..."
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-primary text-black font-bold py-4 hover:bg-primary/90 transition-colors"
+            className="w-full bg-primary text-primary-foreground font-bold py-4 hover:bg-primary/90 transition-colors"
           >
             Wyślij zapytanie
           </button>
@@ -298,7 +298,7 @@ function ContactCards({ config, meta }: ContactVariantProps) {
             <h3 className="text-sm text-muted-foreground uppercase tracking-wider mb-2">
               {config.phoneLabel || "Telefon"}
             </h3>
-            <p className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+            <p className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
               {meta.phone}
             </p>
           </motion.a>
@@ -320,7 +320,7 @@ function ContactCards({ config, meta }: ContactVariantProps) {
             <h3 className="text-sm text-muted-foreground uppercase tracking-wider mb-2">
               {config.emailLabel || "Email"}
             </h3>
-            <p className="text-lg font-bold text-white group-hover:text-primary transition-colors break-all">
+            <p className="text-lg font-bold text-foreground group-hover:text-primary transition-colors break-all">
               {meta.email}
             </p>
           </motion.a>
@@ -341,7 +341,7 @@ function ContactCards({ config, meta }: ContactVariantProps) {
             <h3 className="text-sm text-muted-foreground uppercase tracking-wider mb-2">
               Adres
             </h3>
-            <p className="text-lg font-bold text-white">{meta.address.city}</p>
+            <p className="text-lg font-bold text-foreground">{meta.address.city}</p>
             <p className="text-muted-foreground">
               {meta.address.street}, {meta.address.zip}
             </p>
@@ -363,7 +363,7 @@ function ContactCards({ config, meta }: ContactVariantProps) {
             <h3 className="text-sm text-muted-foreground uppercase tracking-wider mb-2">
               NIP
             </h3>
-            <p className="text-xl font-bold text-white">{meta.nip}</p>
+            <p className="text-xl font-bold text-foreground">{meta.nip}</p>
           </motion.div>
         )}
       </div>

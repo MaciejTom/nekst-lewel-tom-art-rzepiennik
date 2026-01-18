@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FIXMAN - Remonty i Naprawy Stalowa Wola</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2cc0d",
+                        "primary-dark": "#dcb800",
+                        "background-light": "#ffffff",
+                        "background-alt": "#f8f8f5",
+                        "background-dark": "#221f10",
+                        "text-main": "#181711",
+                        "text-muted": "#5e5b4b",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main antialiased overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-[#f5f4f0]">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2 text-text-main group cursor-pointer">
+<div class="flex items-center justify-center size-10 bg-primary rounded-lg text-text-main">
+<span class="material-symbols-outlined">construction</span>
+</div>
+<h2 class="text-2xl font-black tracking-tight uppercase">Fixman</h2>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-text-main text-sm font-bold hover:text-primary transition-colors uppercase tracking-wide" href="#about">O nas</a>
+<a class="text-text-main text-sm font-bold hover:text-primary transition-colors uppercase tracking-wide" href="#services">Usługi</a>
+<a class="text-text-main text-sm font-bold hover:text-primary transition-colors uppercase tracking-wide" href="#portfolio">Realizacje</a>
+<a class="text-text-main text-sm font-bold hover:text-primary transition-colors uppercase tracking-wide" href="#reviews">Opinie</a>
+<a class="text-text-main text-sm font-bold hover:text-primary transition-colors uppercase tracking-wide" href="#contact">Kontakt</a>
+</nav>
+<div class="hidden md:block">
+<button class="flex items-center gap-2 bg-text-main text-white px-5 py-2.5 rounded-lg font-bold hover:bg-black transition-colors shadow-lg shadow-black/10">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>123 456 789</span>
+</button>
+</div>
+<button class="md:hidden p-2 text-text-main">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<section class="relative bg-background-alt pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 translate-x-1/4 pointer-events-none"></div>
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 relative z-10">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-6 lg:max-w-xl">
+<div class="inline-flex items-center gap-2 bg-white px-3 py-1 rounded-full border border-gray-100 w-fit shadow-sm">
+<span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+<span class="text-xs font-bold uppercase tracking-wider text-text-muted">Dostępne terminy na maj 2024</span>
+</div>
+<h1 class="text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-text-main">
+                        Remonty i Naprawy <br/>
+<span class="bg-primary px-2 text-text-main">w Stalowej Woli</span>
+</h1>
+<p class="text-lg text-text-muted font-medium leading-relaxed max-w-md">
+                        Solidność i jakość potwierdzona przez 106 zadowolonych klientów. Twoje mieszkanie w dobrych rękach od 19 lat.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="flex items-center justify-center gap-2 h-14 px-8 bg-primary text-text-main text-base font-bold rounded-lg shadow-[0_4px_0_0_rgba(215,183,11,1)] active:shadow-none active:translate-y-1 transition-all">
+                            Zatrudnij nas
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-14 px-8 bg-white border-2 border-text-main text-text-main text-base font-bold rounded-lg hover:bg-gray-50 transition-colors">
+                            Zobacz realizacje
+                        </button>
+</div>
+<div class="flex items-center gap-6 pt-6 border-t border-gray-200/60 mt-4">
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 p-2 rounded-full text-text-main">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-black text-xl leading-none">19</span>
+<span class="text-xs font-medium text-text-muted uppercase">Lat doświadczenia</span>
+</div>
+</div>
+<div class="w-px h-10 bg-gray-300"></div>
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 p-2 rounded-full text-text-main">
+<span class="material-symbols-outlined">thumb_up</span>
+</div>
+<div class="flex flex-col">
+<span class="font-black text-xl leading-none">106</span>
+<span class="text-xs font-medium text-text-muted uppercase">Opinii Google</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative lg:h-[600px] w-full flex items-center justify-center">
+<div class="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-2xl bg-white border-4 border-white">
+<img alt="Professional renovation van parked in front of a modern house" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKV4jBIJWPzCr4mYIbRXfFC1ZzjxzxF0BbSXPFrlEZxvlEzKw6bXbokesmF9zoUjSnms_AJfeXVeOKD4c3ETG1QKHe17A0lZJ9Ip5m0FCuyprADD8Uv4Wlaya7B_iuVQY_qly32P4C0GfwzqsrHoxxC4PI646BAVGbPPHor2oeTpB7Am7Gc7dqOSxAIjMA4FW96o-1LquCf1WIUi5X0oVznvjlqzaK9Kjm080alxgcHV_gYnmtgkpXKMBms8aTAxSyGLC6irf7YQ"/>
+<div class="absolute bottom-6 left-6 bg-primary px-6 py-4 rounded-xl shadow-lg flex flex-col items-start gap-1 max-w-[200px]">
+<span class="text-xs font-bold uppercase tracking-wider text-text-main/70">Kontakt szybki</span>
+<span class="text-2xl font-black text-text-main">123 456 789</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white" id="about">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8">
+<div class="flex flex-col lg:flex-row justify-between items-end gap-6 mb-16">
+<div class="max-w-3xl">
+<h2 class="text-primary font-bold uppercase tracking-wider mb-2 text-sm">Dlaczego warto wybrać FIXMAN?</h2>
+<h3 class="text-4xl font-black text-text-main leading-tight mb-4">Dlaczego klienci nas polecają</h3>
+<p class="text-text-muted text-lg leading-relaxed max-w-2xl">
+                    106 opinii na Fixly. Wszystkie 5 gwiazdek. Zero negatywnych. To nie przypadek - to 19 lat pracy i podejście, które doceniają klienci.
+                </p>
+</div>
+<div class="hidden lg:block w-32 h-1 bg-primary mb-8"></div>
+</div>
+<div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+<div class="flex flex-col h-full p-6 rounded-2xl bg-background-alt border border-transparent hover:border-primary transition-all duration-300 hover:shadow-xl group">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-primary shadow-sm mb-5 group-hover:bg-primary group-hover:text-text-main transition-colors">
+<span class="material-symbols-outlined text-[28px]">reviews</span>
+</div>
+<h4 class="text-lg font-bold mb-4 text-text-main">106 opinii - wszystkie 5.0</h4>
+<div class="mt-auto relative pt-4">
+<div class="absolute top-1 left-4 bg-background-alt px-2 text-primary z-10">
+<span class="material-symbols-outlined text-xl">format_quote</span>
+</div>
+<div class="border border-primary/20 rounded-xl p-5 pt-6 bg-white/50 relative">
+<p class="text-sm text-text-muted italic mb-3 leading-relaxed">"Jakość na najwyższym poziomie. Panowie zostawili po sobie idealny porządek. 5 gwiazdek to zdecydowanie za mało."</p>
+<div class="flex items-center gap-2">
+<div class="w-6 h-0.5 bg-primary"></div>
+<span class="text-xs font-bold uppercase text-text-main">Jacek</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col h-full p-6 rounded-2xl bg-background-alt border border-transparent hover:border-primary transition-all duration-300 hover:shadow-xl group">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-primary shadow-sm mb-5 group-hover:bg-primary group-hover:text-text-main transition-colors">
+<span class="material-symbols-outlined text-[28px]">history</span>
+</div>
+<h4 class="text-lg font-bold mb-4 text-text-main">19 lat doświadczenia</h4>
+<div class="mt-auto relative pt-4">
+<div class="absolute top-1 left-4 bg-background-alt px-2 text-primary z-10">
+<span class="material-symbols-outlined text-xl">format_quote</span>
+</div>
+<div class="border border-primary/20 rounded-xl p-5 pt-6 bg-white/50 relative">
+<p class="text-sm text-text-muted italic mb-3 leading-relaxed">"To doświadczenie widać w każdym ruchu. Problemy z rurami, których inni nie widzieli, rozwiązali w godzinę."</p>
+<div class="flex items-center gap-2">
+<div class="w-6 h-0.5 bg-primary"></div>
+<span class="text-xs font-bold uppercase text-text-main">Marek</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col h-full p-6 rounded-2xl bg-background-alt border border-transparent hover:border-primary transition-all duration-300 hover:shadow-xl group">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-primary shadow-sm mb-5 group-hover:bg-primary group-hover:text-text-main transition-colors">
+<span class="material-symbols-outlined text-[28px]">handyman</span>
+</div>
+<div class="mb-4">
+<h4 class="text-lg font-bold text-text-main leading-tight">Wszystko pod jednym dachem</h4>
+<span class="inline-block mt-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary-dark px-2 py-0.5 rounded">212 usług</span>
+</div>
+<div class="mt-auto relative pt-4">
+<div class="absolute top-1 left-4 bg-background-alt px-2 text-primary z-10">
+<span class="material-symbols-outlined text-xl">format_quote</span>
+</div>
+<div class="border border-primary/20 rounded-xl p-5 pt-6 bg-white/50 relative">
+<p class="text-sm text-text-muted italic mb-3 leading-relaxed">"Jedna ekipa od wszystkiego. Zrobili łazienkę, kuchnię i jeszcze karnisze powiesili. Oszczędność czasu i nerwów."</p>
+<div class="flex items-center gap-2">
+<div class="w-6 h-0.5 bg-primary"></div>
+<span class="text-xs font-bold uppercase text-text-main">Ewa</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col h-full p-6 rounded-2xl bg-background-alt border border-transparent hover:border-primary transition-all duration-300 hover:shadow-xl group">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-primary shadow-sm mb-5 group-hover:bg-primary group-hover:text-text-main transition-colors">
+<span class="material-symbols-outlined text-[28px]">support_agent</span>
+</div>
+<h4 class="text-lg font-bold mb-4 text-text-main">Doradzamy na każdym kroku</h4>
+<div class="mt-auto relative pt-4">
+<div class="absolute top-1 left-4 bg-background-alt px-2 text-primary z-10">
+<span class="material-symbols-outlined text-xl">format_quote</span>
+</div>
+<div class="border border-primary/20 rounded-xl p-5 pt-6 bg-white/50 relative">
+<p class="text-sm text-text-muted italic mb-3 leading-relaxed">"Pomogli wybrać najlepsze płytki i farby, sami byśmy na to nie wpadli. Efekt końcowy przeszedł nasze oczekiwania."</p>
+<div class="flex items-center gap-2">
+<div class="w-6 h-0.5 bg-primary"></div>
+<span class="text-xs font-bold uppercase text-text-main">Małgorzata</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-text-main text-white" id="services">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">Nasza oferta</span>
+<h2 class="text-4xl md:text-5xl font-black mb-6">Czym się zajmujemy?</h2>
+<p class="text-gray-400 text-lg">Oferujemy pełen zakres usług remontowo-budowlanych w Stalowej Woli i okolicach.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-[#2a271d] p-6 rounded-xl border border-white/5 hover:bg-primary hover:text-text-main group transition-colors duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-[40px] text-primary mb-4 group-hover:text-text-main">bathroom</span>
+<h3 class="text-xl font-bold mb-2">Remonty Łazienek</h3>
+<p class="text-sm text-gray-400 group-hover:text-text-main/80">Skuwanie płytek, hydraulika, biały montaż, układanie glazury.</p>
+</div>
+<div class="bg-[#2a271d] p-6 rounded-xl border border-white/5 hover:bg-primary hover:text-text-main group transition-colors duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-[40px] text-primary mb-4 group-hover:text-text-main">format_paint</span>
+<h3 class="text-xl font-bold mb-2">Malowanie i Gładzie</h3>
+<p class="text-sm text-gray-400 group-hover:text-text-main/80">Przygotowanie ścian, gruntowanie, malowanie natryskowe i tradycyjne.</p>
+</div>
+<div class="bg-[#2a271d] p-6 rounded-xl border border-white/5 hover:bg-primary hover:text-text-main group transition-colors duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-[40px] text-primary mb-4 group-hover:text-text-main">water_drop</span>
+<h3 class="text-xl font-bold mb-2">Hydraulika</h3>
+<p class="text-sm text-gray-400 group-hover:text-text-main/80">Wymiana rur, udrażnianie odpływów, montaż armatury, naprawa awarii.</p>
+</div>
+<div class="bg-[#2a271d] p-6 rounded-xl border border-white/5 hover:bg-primary hover:text-text-main group transition-colors duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-[40px] text-primary mb-4 group-hover:text-text-main">handyman</span>
+<h3 class="text-xl font-bold mb-2">Drobne Naprawy</h3>
+<p class="text-sm text-gray-400 group-hover:text-text-main/80">Składanie mebli, montaż karniszy, wymiana zamków i inne prace domowe.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-alt" id="portfolio">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+<div>
+<h2 class="text-4xl font-black text-text-main mb-3">Ostatnie realizacje</h2>
+<p class="text-text-muted">Zobacz efekty naszej pracy w Stalowej Woli.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-5 py-2 rounded-full bg-primary text-text-main text-sm font-bold shadow-sm">Wszystkie</button>
+<button class="px-5 py-2 rounded-full bg-white text-text-main border border-gray-200 text-sm font-bold hover:bg-gray-100 transition-colors">Łazienki</button>
+<button class="px-5 py-2 rounded-full bg-white text-text-main border border-gray-200 text-sm font-bold hover:bg-gray-100 transition-colors">Kuchnie</button>
+<button class="px-5 py-2 rounded-full bg-white text-text-main border border-gray-200 text-sm font-bold hover:bg-gray-100 transition-colors">Wykończenia</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="group relative rounded-xl overflow-hidden aspect-[4/3] cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern bathroom renovation with white tiles and gold fixtures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2t0k9FiCwUJ0ECBi8xW90PsFsNLUgHooOzR0_qI_A2kV4qoUrCsMK67TdiITO6iBpc_97iRvngPFnOgyGlh7T43q3qgcraVByooftKPdd0MdoRfyCzodA6rSVvSHAHKf_sO1_InQlBtIzMmOBZQyBscRwPWH0Ey--7VsfFNs8_sG6uq8VUB4mg_kUHw8h2EKLoax1OGQpgUVSPhoRZAY3xMtoPophfy9EaGk5SU5qvOkQeNSofw_xnxnapiRrChNAdG-VKwUrQw"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-primary text-xs font-bold uppercase tracking-wider mb-1">Stalowa Wola, Centrum</span>
+<h3 class="text-white text-xl font-bold">Generalny remont łazienki</h3>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden aspect-[4/3] cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Bright modern kitchen with yellow accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe-LRW7Rkn09LgKlY09DJxBJRz1gqjHwjsmEE7aBs59k08LDgygo8ycCgTQtLx83roPMLBNlPFtUoNDaDOvOsZ91O5BpgqwM6hNokefnXaXZY97g0dZ4nIT6x97Jrb_mBDTozHZ49PbQu9YjfSJIbOtEiQG5MdnEYnlAiRLHOPyvEBTCXyLBXbIx2dRXV4eKY5WRgOj9hVKLx3751yK855s7UZoZNrRTTUL0h7S5WTL8ZoGy82iS14OxnMY8vA8G0phCkeJtaxKA"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-primary text-xs font-bold uppercase tracking-wider mb-1">Nisko</span>
+<h3 class="text-white text-xl font-bold">Montaż kuchni na wymiar</h3>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden aspect-[4/3] cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Spacious living room with freshly painted walls and new flooring" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACx494UfsVPL7sq3el9R8-EUHxecC88C9K512X98jSHI00UcZWwrZP4rWfGk-JqZWvtdqqrpTXmWUi9i9tMw1DuXO18dPu9HxMIowU5oOu6M4aRcAoCac4VcZBg9ExLy2OfhI-CJ8PBBCsF96XbSI4opLhhlHf4Z8k1Zyw39IIJVwSk439hvlBqA34ZieHtHIJADwUuQgcgEVD5qP79bjqreNxndxzlie3JRcqFgSWqPN3-BUgA9j4K2MdR8OOGIMO29kev3tfYg"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-primary text-xs font-bold uppercase tracking-wider mb-1">Stalowa Wola, Osiedle Młodych</span>
+<h3 class="text-white text-xl font-bold">Wykończenie mieszkania deweloperskiego</h3>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden aspect-[4/3] cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Bedroom renovation showing new lighting and wall texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqmz8cfDTSnUeAukr7vZtCpdsebtLRRc8AeR9CtPa6oKIodRQGtnrsCvzVgUmlvV3L3paDBHPeifbNrxl-3VoZBeq2Zz8KLeFMbyUaG0zCWLyuJ2T4HCT0cdXa1VDsgxIJnAnS_sQ8YyMlyH7hsave6RdvpT5Gf4VodD0L95KrLaAiSV0Shcr8YFMuiQsSgOt4-Uarvt7LORbv2mqF-hchW82iOuUDS-wKpbkLk68diaLTfAxN5Z2U3ZjCIpS2FmWh8u8c71csDg"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-primary text-xs font-bold uppercase tracking-wider mb-1">Rozwadów</span>
+<h3 class="text-white text-xl font-bold">Sypialnia z garderobą</h3>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden aspect-[4/3] cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Commercial office space renovation with glass partitions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtJFFfpw1dn7Ljx-0rhiS0x97-12hbQ1ijWQNBQzOeQZO1j-HTH92jglvP3xapOIboxsdhyksu-HhlT-d0RiGTa_V5V2fUi2-wthLiQDBcqSyfXYjK-AcOjAxQ3xbA7X7SjXYnqCEtkiOhokn0D3Cvp3a4ay-WXBDnNVI1qwowxHNeozgw54tBezeyXzKF6DYeUamrtIgoZb4VZJwBAUDtW8PFZuIQ0oIv14s_bQAJah7YSmZy4pgqwVEf5KN-v53iXsvD16CggA"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-primary text-xs font-bold uppercase tracking-wider mb-1">Stalowa Wola</span>
+<h3 class="text-white text-xl font-bold">Remont biura open-space</h3>
+</div>
+</div>
+<div class="bg-primary rounded-xl p-8 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-5xl text-text-main mb-4">add_photo_alternate</span>
+<h3 class="text-2xl font-black text-text-main mb-2">Zobacz więcej</h3>
+<p class="text-text-main/80 mb-6 text-sm font-medium">Mamy ponad 500 zrealizowanych projektów.</p>
+<button class="bg-text-main text-white px-6 py-3 rounded-lg font-bold hover:bg-black transition-colors w-full">
+                        Przejdź do galerii
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white border-t border-gray-100" id="reviews">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8">
+<h2 class="text-center text-4xl font-black text-text-main mb-16">Co mówią nasi klienci?</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-background-alt p-8 rounded-2xl relative">
+<span class="material-symbols-outlined text-4xl text-primary/30 absolute top-6 right-6">format_quote</span>
+<div class="flex gap-1 text-primary mb-4">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<p class="text-text-main font-medium mb-6">"Pełen profesjonalizm. Panowie z Fixmana zrobili łazienkę w 5 dni, dokładnie tak jak było ustalone. Czysto, sprawnie i bez niespodzianek cenowych."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of happy client Marek" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe5gwVFvT2zoR_vCdBCTwhN2Fcgg7zohLXmOk5zK2BCBNEpdz1shQxvkg0-0JISB90jc8uLGGm4_SHxRp35KX5Vdo7XSHbUIG4q-6rIfrp2GBIXkBJa9XfNVjYxEJo_WZ593fjJ407pKGCsDr_BX2y1jDSaNGdQb1HrOa2nsyZ8670vJbJ0JTrP6TWL_QaBpU2i7fZdLqcbDc9cd2CZ2YnY01Pw_29v7FbAKKz5Oq2GDObiv4GcRxwidEMmN-pymW2Dm7JQjU4AA"/>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main">Marek Kowalski</p>
+<p class="text-xs text-text-muted">Remont łazienki</p>
+</div>
+</div>
+</div>
+<div class="bg-background-alt p-8 rounded-2xl relative shadow-xl ring-2 ring-primary/20 scale-105 z-10">
+<span class="material-symbols-outlined text-4xl text-primary/30 absolute top-6 right-6">format_quote</span>
+<div class="flex gap-1 text-primary mb-4">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<p class="text-text-main font-bold text-lg mb-6">"Najlepsza ekipa w Stalowej Woli. Remont całego mieszkania przebiegł wzorowo. Bardzo dobry kontakt i doradztwo w kwestii materiałów. Polecam!"</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of happy client Anna" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEmXjMarz7pEis51yP7tQN-6e8ceOKhHx9IX0kPgJGr0WBqUlEbzOncb4dQxViMqXOtp_bqNrRgPhfK47Y3zw95kqMP2pGIj0trOnoxG7oJ73GUBO44zh_3-EPgkBuai-iEgXbTYmFwAJHaX1zr5ix7iHYegYeNCWIgeVRCmytdCLJNkvqUfjt3VMn0yfdrzcDTiWBvqMENpF4ToJuNHV0S2vgfk7m1Y-Pdfgu1nQkMXz7MCcPJDlItzdTYr3nVCL01UnTadkFag"/>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main">Anna Nowak</p>
+<p class="text-xs text-text-muted">Generalny remont</p>
+</div>
+</div>
+</div>
+<div class="bg-background-alt p-8 rounded-2xl relative">
+<span class="material-symbols-outlined text-4xl text-primary/30 absolute top-6 right-6">format_quote</span>
+<div class="flex gap-1 text-primary mb-4">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<p class="text-text-main font-medium mb-6">"Korzystałem z usługi malowania. Szybko, dokładnie i w dobrej cenie. Na pewno wrócę przy kolejnych pracach."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of happy client Piotr" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPeh4CrlOVsgitjlVBN41MSByqV_K0gxCkSthZUo_C-w3jbUzw2jPHESpfWm_wU4bj7__AqWzMOeKaoQcuz5zmNBR8zRengn8mKj84vM14Jy3lRSQcc7gzU1Ljc5IsxM1IK4yYrlGNLlWmAxB8pSIP6AGS7rywGr17_AMtUHMu--i10vrzGEXNQtOyLu06XzGXSsN20vT8sXx8Tvq-78d_DUepgu2A-4TD8SWeoNjZqabEQKBO0NfDtINpIHvYSBlquIpVIa9Emg"/>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main">Piotr Wiśniewski</p>
+<p class="text-xs text-text-muted">Malowanie ścian</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-10">
+<a class="inline-flex items-center gap-2 text-text-main font-bold border-b-2 border-primary hover:text-primary transition-colors pb-0.5" href="#">
+                    Zobacz wszystkie 106 opinii na Google
+                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+</section>
+<section class="bg-text-main text-white py-20 lg:py-28 relative overflow-hidden" id="contact">
+<div class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary rounded-full blur-[150px] opacity-10 translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500 rounded-full blur-[150px] opacity-10 -translate-x-1/2 translate-y-1/2"></div>
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 relative z-10">
+<div class="grid lg:grid-cols-2 gap-16 items-start">
+<div class="flex flex-col gap-10">
+<div>
+<h2 class="text-primary font-bold uppercase tracking-wider mb-2 text-sm">Kontakt</h2>
+<h3 class="text-5xl font-black mb-6">Skontaktuj się <br/>z nami</h3>
+<p class="text-gray-400 text-lg max-w-md">Masz pytania dotyczące remontu? Potrzebujesz szybkiej wyceny? Zadzwoń lub napisz do nas.</p>
+</div>
+<div class="flex flex-col gap-6">
+<a class="group flex items-center gap-6 p-6 rounded-2xl bg-[#2a271d] border border-white/5 hover:bg-primary transition-colors duration-300" href="tel:123456789">
+<div class="bg-primary group-hover:bg-white text-text-main w-16 h-16 rounded-full flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-3xl">phone_in_talk</span>
+</div>
+<div>
+<p class="text-gray-400 text-sm font-medium uppercase tracking-wide group-hover:text-text-main/70">Zadzwoń teraz</p>
+<p class="text-3xl font-bold text-white group-hover:text-text-main">123 456 789</p>
+</div>
+</a>
+<a class="group flex items-center gap-6 p-6 rounded-2xl bg-[#2a271d] border border-white/5 hover:bg-white transition-colors duration-300" href="mailto:kontakt@fixman.pl">
+<div class="bg-white/10 group-hover:bg-primary text-white group-hover:text-text-main w-16 h-16 rounded-full flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-3xl">mail</span>
+</div>
+<div>
+<p class="text-gray-400 text-sm font-medium uppercase tracking-wide group-hover:text-text-muted">Napisz e-mail</p>
+<p class="text-2xl font-bold text-white group-hover:text-text-main">kontakt@fixman.pl</p>
+</div>
+</a>
+</div>
+<div class="flex items-center gap-3 text-gray-400 mt-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span>Stalowa Wola, ul. Okulickiego 12, 37-450</span>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-8 lg:p-10 text-text-main shadow-2xl">
+<h4 class="text-2xl font-bold mb-6">Darmowa wycena</h4>
+<form class="flex flex-col gap-5">
+<div class="grid grid-cols-2 gap-5">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold" for="name">Imię i nazwisko</label>
+<input class="h-12 px-4 rounded-lg bg-gray-50 border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="name" placeholder="Jan Kowalski" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold" for="phone">Telefon</label>
+<input class="h-12 px-4 rounded-lg bg-gray-50 border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="phone" placeholder="123 456 789" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold" for="service">Rodzaj usługi</label>
+<select class="h-12 px-4 rounded-lg bg-gray-50 border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-gray-500" id="service">
+<option>Wybierz usługę...</option>
+<option>Remont łazienki</option>
+<option>Malowanie</option>
+<option>Hydraulika</option>
+<option>Inne</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold" for="message">Wiadomość</label>
+<textarea class="p-4 rounded-lg bg-gray-50 border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" id="message" placeholder="Opisz krótko co jest do zrobienia..." rows="4"></textarea>
+</div>
+<button class="mt-2 h-14 bg-primary text-text-main font-bold text-lg rounded-lg shadow-lg hover:bg-primary-dark active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="button">
+                            Wyślij wiadomość
+                            <span class="material-symbols-outlined">send</span>
+</button>
+<p class="text-xs text-gray-400 text-center mt-2">Odpowiadamy zazwyczaj w ciągu 2 godzin.</p>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-[#1a1810] text-gray-400 py-12 border-t border-white/5">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-white">
+<div class="flex items-center justify-center size-8 bg-primary rounded text-text-main">
+<span class="material-symbols-outlined text-[18px]">construction</span>
+</div>
+<h2 class="text-xl font-black tracking-tight uppercase">Fixman</h2>
+</div>
+<div class="flex gap-6 text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">O nas</a>
+<a class="hover:text-primary transition-colors" href="#">Usługi</a>
+<a class="hover:text-primary transition-colors" href="#">Realizacje</a>
+<a class="hover:text-primary transition-colors" href="#">Polityka Prywatności</a>
+</div>
+<p class="text-sm">© 2024 Fixman Stalowa Wola. Wszelkie prawa zastrzeżone.</p>
+</div>
+</footer>
+</body></html>

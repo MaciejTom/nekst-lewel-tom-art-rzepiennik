@@ -47,7 +47,7 @@ function FaqAccordionCentered({ config }: FaqVariantProps) {
   return (
     <SectionWrapper id="faq" showGrid>
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
           {config.title}{" "}
           {config.titleAccent && (
             <span className="text-primary">{config.titleAccent}</span>
@@ -174,7 +174,7 @@ function FaqCard({ faq, index }: FaqCardProps) {
       </div>
 
       {/* Question */}
-      <h3 className="text-white font-bold mb-4 group-hover:text-primary transition-colors">
+      <h3 className="text-foreground font-bold mb-4 group-hover:text-primary transition-colors">
         {faq.question}
       </h3>
 

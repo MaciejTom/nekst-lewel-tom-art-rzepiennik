@@ -47,7 +47,7 @@ function HeroFullscreenLeft({ config, meta }: HeroVariantProps) {
   return (
     <section
       id="hero"
-      className="hero-section min-h-screen flex items-center relative overflow-hidden bg-background text-white"
+      className="hero-section min-h-screen flex items-center relative overflow-hidden bg-background text-foreground"
     >
       {/* Rebar pattern overlay */}
       {config.showRebarPattern && (
@@ -97,7 +97,7 @@ function HeroFullscreenLeft({ config, meta }: HeroVariantProps) {
             <Button
               size="lg"
               asChild
-              className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg font-semibold group"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg font-semibold group"
             >
               <a href={config.ctaPrimary.href}>
                 {config.ctaPrimary.text}
@@ -109,7 +109,7 @@ function HeroFullscreenLeft({ config, meta }: HeroVariantProps) {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border-border text-white hover:border-primary hover:text-primary px-8 py-6 text-lg font-semibold bg-transparent"
+                className="border-border text-foreground hover:border-primary hover:text-primary px-8 py-6 text-lg font-semibold bg-transparent"
               >
                 <a href={config.ctaSecondary.scrollTo}>
                   {config.ctaSecondary.text}
@@ -158,7 +158,7 @@ function HeroFullscreenCenter({ config, meta }: HeroVariantProps) {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background text-white"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background text-foreground"
     >
       {/* Rebar pattern overlay */}
       {config.showRebarPattern && (
@@ -200,7 +200,7 @@ function HeroFullscreenCenter({ config, meta }: HeroVariantProps) {
             <Button
               size="lg"
               asChild
-              className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg font-semibold group"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg font-semibold group"
             >
               <a href={config.ctaPrimary.href}>
                 {config.ctaPrimary.text}
@@ -212,7 +212,7 @@ function HeroFullscreenCenter({ config, meta }: HeroVariantProps) {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border-border text-white hover:border-primary hover:text-primary px-8 py-6 text-lg font-semibold bg-transparent"
+                className="border-border text-foreground hover:border-primary hover:text-primary px-8 py-6 text-lg font-semibold bg-transparent"
               >
                 <a href={config.ctaSecondary.scrollTo}>
                   {config.ctaSecondary.text}
@@ -258,7 +258,7 @@ function HeroSplitLeft({ config, meta }: HeroVariantProps) {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center relative overflow-hidden bg-background text-white"
+      className="min-h-screen flex items-center relative overflow-hidden bg-background text-foreground"
     >
       <div className="container px-[5%] py-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -297,7 +297,7 @@ function HeroSplitLeft({ config, meta }: HeroVariantProps) {
               <Button
                 size="lg"
                 asChild
-                className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg font-semibold group"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg font-semibold group"
               >
                 <a href={config.ctaPrimary.href}>
                   {config.ctaPrimary.text}
@@ -309,7 +309,7 @@ function HeroSplitLeft({ config, meta }: HeroVariantProps) {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="border-border text-white hover:border-primary hover:text-primary px-8 py-6 text-lg font-semibold bg-transparent"
+                  className="border-border text-foreground hover:border-primary hover:text-primary px-8 py-6 text-lg font-semibold bg-transparent"
                 >
                   <a href={config.ctaSecondary.scrollTo}>
                     {config.ctaSecondary.text}
@@ -364,7 +364,7 @@ function HeroSplitRight({ config, meta }: HeroVariantProps) {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center relative overflow-hidden bg-background text-white"
+      className="min-h-screen flex items-center relative overflow-hidden bg-background text-foreground"
     >
       <div className="container px-[5%] py-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -419,7 +419,7 @@ function HeroSplitRight({ config, meta }: HeroVariantProps) {
               <Button
                 size="lg"
                 asChild
-                className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg font-semibold group"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg font-semibold group"
               >
                 <a href={config.ctaPrimary.href}>
                   {config.ctaPrimary.text}
@@ -431,7 +431,7 @@ function HeroSplitRight({ config, meta }: HeroVariantProps) {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="border-border text-white hover:border-primary hover:text-primary px-8 py-6 text-lg font-semibold bg-transparent"
+                  className="border-border text-foreground hover:border-primary hover:text-primary px-8 py-6 text-lg font-semibold bg-transparent"
                 >
                   <a href={config.ctaSecondary.scrollTo}>
                     {config.ctaSecondary.text}

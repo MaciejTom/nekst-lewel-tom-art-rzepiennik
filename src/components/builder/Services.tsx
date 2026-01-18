@@ -87,15 +87,15 @@ function ServicesTabsWithImage({ config }: ServicesVariantProps) {
                     group relative w-full text-left outline-none flex flex-col justify-center
                     flex-1 px-8 py-6 border-b lg:border-b-0 lg:border-l-4 transition-all duration-300
                     ${activeService === service.id
-                      ? "border-primary bg-white/5"
-                      : "border-transparent border-b-border hover:bg-white/[0.02]"
+                      ? "border-primary bg-foreground/5"
+                      : "border-transparent border-b-border hover:bg-foreground/[0.02]"
                     }
                   `}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className={`
                       text-lg lg:text-xl font-bold transition-colors
-                      ${activeService === service.id ? "text-white" : "text-muted-foreground group-hover:text-white"}
+                      ${activeService === service.id ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"}
                     `}>
                       {service.title}
                     </span>
@@ -144,10 +144,10 @@ function ServicesTabsWithImage({ config }: ServicesVariantProps) {
                     {/* Content Overlay */}
                     <div className="relative z-10 p-8 md:p-12">
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="p-3 bg-primary text-black rounded-sm">
+                        <div className="p-3 bg-primary text-primary-foreground rounded-sm">
                           <Icon className="w-6 h-6" />
                         </div>
-                        <h3 className="text-3xl md:text-4xl font-bold text-white">
+                        <h3 className="text-3xl md:text-4xl font-bold text-foreground">
                           {service.title}
                         </h3>
                       </div>
@@ -158,7 +158,7 @@ function ServicesTabsWithImage({ config }: ServicesVariantProps) {
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8">
                         {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-3 text-sm font-medium text-white/90">
+                          <div key={idx} className="flex items-center gap-3 text-sm font-medium text-foreground/90">
                             <Check className="w-4 h-4 text-primary flex-shrink-0" />
                             {feature}
                           </div>
@@ -208,12 +208,12 @@ function ServicesCardsGrid({ config }: ServicesVariantProps) {
 
               <div className="relative z-10">
                 {/* Icon */}
-                <div className="p-3 bg-primary/10 text-primary w-fit rounded-sm mb-6 group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+                <div className="p-3 bg-primary/10 text-primary w-fit rounded-sm mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                   <Icon className="w-6 h-6" />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display text-xl text-white mb-3 group-hover:text-primary transition-colors tracking-wide">
+                <h3 className="font-display text-xl text-foreground mb-3 group-hover:text-primary transition-colors tracking-wide">
                   {service.title}
                 </h3>
 
@@ -280,10 +280,10 @@ function ServicesAccordion({ config }: ServicesVariantProps) {
                   className="w-full px-6 py-5 flex items-center justify-between text-left"
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-sm transition-colors ${isOpen ? 'bg-primary text-black' : 'bg-primary/10 text-primary'}`}>
+                    <div className={`p-2 rounded-sm transition-colors ${isOpen ? 'bg-primary text-primary-foreground' : 'bg-primary/10 text-primary'}`}>
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className={`font-bold text-lg transition-colors ${isOpen ? 'text-primary' : 'text-white'}`}>
+                    <span className={`font-bold text-lg transition-colors ${isOpen ? 'text-primary' : 'text-foreground'}`}>
                       {service.title}
                     </span>
                   </div>
@@ -305,7 +305,7 @@ function ServicesAccordion({ config }: ServicesVariantProps) {
                         </p>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {service.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-center gap-2 text-sm text-white/80">
+                            <li key={idx} className="flex items-center gap-2 text-sm text-foreground/80">
                               <Check className="w-4 h-4 text-primary flex-shrink-0" />
                               {feature}
                             </li>

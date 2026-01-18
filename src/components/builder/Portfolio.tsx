@@ -61,7 +61,7 @@ function PortfolioMosaic({ config }: PortfolioVariantProps) {
               {config.sectionLabel}
             </span>
           )}
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
             {config.title}{" "}
             {config.titleAccent && (
               <span className="text-muted-foreground">{config.titleAccent}</span>
@@ -74,7 +74,7 @@ function PortfolioMosaic({ config }: PortfolioVariantProps) {
               <div key={index} className="flex gap-4">
                 {index > 0 && <div className="w-px h-12 bg-border" />}
                 <div className="text-right">
-                  <div className={`text-3xl font-bold ${index === 0 ? 'text-white' : 'text-primary'}`}>
+                  <div className={`text-3xl font-bold ${index === 0 ? 'text-foreground' : 'text-primary'}`}>
                     {stat.value}
                   </div>
                   <div className="text-xs text-muted-foreground uppercase">{stat.label}</div>
@@ -100,7 +100,7 @@ function PortfolioMosaic({ config }: PortfolioVariantProps) {
       {/* Gallery Button */}
       {config.showGalleryButton && (
         <div className="mt-12 text-center">
-          <button className="border border-border text-white px-8 py-4 font-bold uppercase text-sm tracking-widest hover:bg-primary hover:text-black hover:border-primary transition-colors duration-300">
+          <button className="border border-border text-foreground px-8 py-4 font-bold uppercase text-sm tracking-widest hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-300">
             {config.galleryButtonText || "Zobacz Pełną Galerię"}
           </button>
         </div>
@@ -145,7 +145,7 @@ function PortfolioGrid3Col({ config }: PortfolioVariantProps) {
       {/* Gallery Button */}
       {config.showGalleryButton && (
         <div className="mt-12 text-center">
-          <button className="border border-border text-white px-8 py-4 font-bold uppercase text-sm tracking-widest hover:bg-primary hover:text-black hover:border-primary transition-colors duration-300">
+          <button className="border border-border text-foreground px-8 py-4 font-bold uppercase text-sm tracking-widest hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-300">
             {config.galleryButtonText || "Zobacz Pełną Galerię"}
           </button>
         </div>
@@ -193,7 +193,7 @@ function PortfolioCarousel({ config }: PortfolioVariantProps) {
       {/* Gallery Button */}
       {config.showGalleryButton && (
         <div className="mt-8">
-          <button className="border border-border text-white px-6 py-3 font-bold uppercase text-sm tracking-widest hover:bg-primary hover:text-black hover:border-primary transition-colors duration-300">
+          <button className="border border-border text-foreground px-6 py-3 font-bold uppercase text-sm tracking-widest hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-300">
             {config.galleryButtonText || "Zobacz Pełną Galerię"}
           </button>
         </div>
@@ -229,20 +229,20 @@ function PortfolioMosaicCard({ project, index, sizeClass }: PortfolioCardProps &
       />
 
       {/* Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90" />
 
       {/* Content */}
       <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
         <div className="flex items-center justify-between mb-2">
-          <div className="bg-primary/90 text-black text-xs font-bold px-2 py-1 uppercase tracking-wider inline-block">
+          <div className="bg-primary/90 text-primary-foreground text-xs font-bold px-2 py-1 uppercase tracking-wider inline-block">
             Realizacja #{index + 1}
           </div>
           <div className="bg-black/50 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
-            <ArrowUpRight className="text-white w-5 h-5" />
+            <ArrowUpRight className="text-foreground w-5 h-5" />
           </div>
         </div>
 
-        <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
+        <h3 className="text-2xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
           {project.title}
         </h3>
 
@@ -256,8 +256,8 @@ function PortfolioMosaicCard({ project, index, sizeClass }: PortfolioCardProps &
       </div>
 
       {/* Technical Corners */}
-      <div className="absolute top-4 right-4 w-3 h-3 border-t border-r border-white/30 opacity-0 group-hover:opacity-100 transition-opacity" />
-      <div className="absolute bottom-4 left-4 w-3 h-3 border-b border-l border-white/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute top-4 right-4 w-3 h-3 border-t border-r border-foreground/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute bottom-4 left-4 w-3 h-3 border-b border-l border-foreground/30 opacity-0 group-hover:opacity-100 transition-opacity" />
     </motion.div>
   )
 }
@@ -286,7 +286,7 @@ function PortfolioSimpleCard({ project, index }: PortfolioCardProps) {
 
         {/* Badge */}
         {project.featured && (
-          <div className="absolute top-4 left-4 bg-primary text-black text-xs font-bold px-2 py-1 uppercase tracking-wider">
+          <div className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 uppercase tracking-wider">
             Wyróżnione
           </div>
         )}
@@ -295,7 +295,7 @@ function PortfolioSimpleCard({ project, index }: PortfolioCardProps) {
       {/* Content */}
       <div className="p-6">
         <div className="text-xs text-primary font-mono uppercase mb-2">{project.category}</div>
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+        <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
           {project.title}
         </h3>
         <p className="text-sm text-muted-foreground">{project.specs}</p>
