@@ -1,0 +1,370 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hero.schema.json",
+  "title": "Hero Section Configuration Schema",
+  "description": "Wszystkie zmienne dla sekcji Hero",
+
+  "type": "object",
+  "properties": {
+
+    "variant": {
+      "type": "string",
+      "enum": ["hero-image", "hero-split", "hero-centered", "hero-video"],
+      "default": "hero-image",
+      "description": "Główny wariant layoutu Hero"
+    },
+
+    "background": {
+      "description": "Tło sekcji",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["image", "video", "gradient", "solid"],
+          "default": "image"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": { "type": "string" },
+            "alt": { "type": "string" },
+            "position": { "type": "string", "default": "center" },
+            "overlay": {
+              "type": "object",
+              "properties": {
+                "gradient": { "type": "boolean", "default": true },
+                "gradientDirection": { "type": "string", "default": "to-b" },
+                "opacity": { "type": "number", "default": 0.7 }
+              }
+            }
+          }
+        },
+        "video": {
+          "type": "object",
+          "properties": {
+            "src": { "type": "string" },
+            "poster": { "type": "string" },
+            "autoplay": { "type": "boolean", "default": true },
+            "muted": { "type": "boolean", "default": true },
+            "loop": { "type": "boolean", "default": true }
+          }
+        },
+        "color": { "type": "string", "default": "background" }
+      }
+    },
+
+    "gridOverlay": {
+      "description": "Kratka na tle",
+      "type": "object",
+      "properties": {
+        "show": { "type": "boolean", "default": true },
+        "type": { "type": "string", "enum": ["grid", "rebar", "dots"], "default": "rebar" },
+        "opacity": { "type": "number", "default": 0.3 },
+        "size": { "type": "number", "default": 40 },
+        "color": { "type": "string", "default": "primary" }
+      }
+    },
+
+    "decorativeElements": {
+      "description": "Elementy dekoracyjne (geometryczne kształty)",
+      "type": "object",
+      "properties": {
+        "show": { "type": "boolean", "default": true },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string", "enum": ["square", "rectangle", "line", "circle"] },
+              "position": { "type": "string" },
+              "size": { "type": "string" },
+              "rotation": { "type": "number" },
+              "opacity": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+
+    "layout": {
+      "description": "Layout contentu",
+      "type": "object",
+      "properties": {
+        "contentPosition": {
+          "type": "string",
+          "enum": ["left", "center", "right"],
+          "default": "left"
+        },
+        "contentMaxWidth": { "type": "string", "default": "max-w-4xl" },
+        "verticalAlign": {
+          "type": "string",
+          "enum": ["top", "center", "bottom"],
+          "default": "center"
+        },
+        "minHeight": { "type": "string", "default": "min-h-screen" },
+        "padding": { "type": "string", "default": "py-32" }
+      }
+    },
+
+    "badge": {
+      "description": "Mały label nad nagłówkiem",
+      "type": "object",
+      "properties": {
+        "show": { "type": "boolean", "default": true },
+        "text": { "type": "string" },
+        "style": {
+          "type": "object",
+          "properties": {
+            "variant": { "type": "string", "enum": ["outlined", "filled", "text"], "default": "outlined" },
+            "color": { "type": "string", "default": "primary" },
+            "size": { "type": "string", "enum": ["sm", "md"], "default": "sm" },
+            "uppercase": { "type": "boolean", "default": true },
+            "tracking": { "type": "string", "default": "wider" }
+          }
+        },
+        "animation": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "type": { "type": "string", "default": "fade-up" },
+            "delay": { "type": "number", "default": 0 }
+          }
+        }
+      }
+    },
+
+    "headline": {
+      "description": "Główny nagłówek H1",
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Każdy element = nowa linia"
+        },
+        "accentLine": {
+          "type": "integer",
+          "description": "Która linia ma być wyróżniona (0-indexed)"
+        },
+        "accentStyle": {
+          "type": "string",
+          "enum": ["primary-color", "underline", "highlight", "none"],
+          "default": "primary-color"
+        },
+        "style": {
+          "type": "object",
+          "properties": {
+            "size": { "type": "string", "default": "text-5xl sm:text-6xl lg:text-8xl" },
+            "weight": { "type": "string", "default": "font-bold" },
+            "font": { "type": "string", "default": "font-display" },
+            "color": { "type": "string", "default": "text-white" },
+            "tracking": { "type": "string", "default": "tracking-wide" },
+            "leading": { "type": "string", "default": "leading-none" }
+          }
+        },
+        "animation": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "type": { "type": "string", "default": "fade-up" },
+            "delay": { "type": "number", "default": 0.1 },
+            "staggerLines": { "type": "boolean", "default": false }
+          }
+        }
+      }
+    },
+
+    "subtitle": {
+      "description": "Opis pod nagłówkiem",
+      "type": "object",
+      "properties": {
+        "show": { "type": "boolean", "default": true },
+        "text": { "type": "string" },
+        "style": {
+          "type": "object",
+          "properties": {
+            "size": { "type": "string", "default": "text-lg sm:text-xl" },
+            "color": { "type": "string", "default": "text-muted-foreground" },
+            "maxWidth": { "type": "string", "default": "max-w-2xl" },
+            "marginBottom": { "type": "string", "default": "mb-10" }
+          }
+        },
+        "animation": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "delay": { "type": "number", "default": 0.2 }
+          }
+        }
+      }
+    },
+
+    "cta": {
+      "description": "Przyciski Call-to-Action",
+      "type": "object",
+      "properties": {
+        "layout": {
+          "type": "string",
+          "enum": ["horizontal", "vertical", "stacked-mobile"],
+          "default": "stacked-mobile"
+        },
+        "gap": { "type": "string", "default": "gap-4" },
+        "primary": {
+          "type": "object",
+          "properties": {
+            "show": { "type": "boolean", "default": true },
+            "text": { "type": "string" },
+            "href": { "type": "string" },
+            "type": { "type": "string", "enum": ["link", "phone", "email", "scroll", "modal"], "default": "phone" },
+            "style": {
+              "type": "object",
+              "properties": {
+                "variant": { "type": "string", "enum": ["solid", "outline", "ghost"], "default": "solid" },
+                "color": { "type": "string", "default": "primary" },
+                "size": { "type": "string", "enum": ["sm", "md", "lg"], "default": "lg" }
+              }
+            },
+            "icon": {
+              "type": "object",
+              "properties": {
+                "show": { "type": "boolean", "default": true },
+                "name": { "type": "string", "default": "ArrowRight" },
+                "position": { "type": "string", "enum": ["left", "right"], "default": "right" },
+                "animation": { "type": "string", "enum": ["none", "hover-right", "pulse"], "default": "hover-right" }
+              }
+            },
+            "hover": {
+              "type": "object",
+              "properties": {
+                "background": { "type": "string", "default": "primary/90" },
+                "scale": { "type": "boolean", "default": false },
+                "transition": { "type": "string", "default": "duration-300" }
+              }
+            }
+          }
+        },
+        "secondary": {
+          "type": "object",
+          "properties": {
+            "show": { "type": "boolean", "default": true },
+            "text": { "type": "string" },
+            "type": { "type": "string", "enum": ["link", "scroll", "modal"], "default": "scroll" },
+            "scrollTo": { "type": "string", "default": "#kontakt" },
+            "style": {
+              "type": "object",
+              "properties": {
+                "variant": { "type": "string", "default": "outline" },
+                "color": { "type": "string", "default": "white" },
+                "size": { "type": "string", "default": "lg" }
+              }
+            },
+            "hover": {
+              "type": "object",
+              "properties": {
+                "borderColor": { "type": "string", "default": "primary" },
+                "textColor": { "type": "string", "default": "primary" }
+              }
+            }
+          }
+        },
+        "animation": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "delay": { "type": "number", "default": 0.3 }
+          }
+        }
+      }
+    },
+
+    "stats": {
+      "description": "Statystyki na dole Hero",
+      "type": "object",
+      "properties": {
+        "show": { "type": "boolean", "default": true },
+        "layout": {
+          "type": "string",
+          "enum": ["grid", "inline", "separated"],
+          "default": "grid"
+        },
+        "columns": { "type": "integer", "default": 3 },
+        "separator": {
+          "type": "object",
+          "properties": {
+            "show": { "type": "boolean", "default": true },
+            "type": { "type": "string", "enum": ["line", "border-top", "none"], "default": "border-top" }
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": { "type": "string" },
+              "label": { "type": "string" },
+              "accent": { "type": "boolean", "default": false }
+            }
+          }
+        },
+        "style": {
+          "type": "object",
+          "properties": {
+            "valueSize": { "type": "string", "default": "text-2xl sm:text-3xl" },
+            "valueColor": { "type": "string", "default": "text-primary" },
+            "valueFont": { "type": "string", "default": "font-display" },
+            "labelSize": { "type": "string", "default": "text-sm" },
+            "labelColor": { "type": "string", "default": "text-muted-foreground" },
+            "gap": { "type": "string", "default": "gap-6" },
+            "marginTop": { "type": "string", "default": "mt-20" },
+            "paddingTop": { "type": "string", "default": "pt-10" },
+            "maxWidth": { "type": "string", "default": "max-w-2xl" }
+          }
+        },
+        "animation": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "delay": { "type": "number", "default": 0.4 }
+          }
+        }
+      }
+    },
+
+    "scrollIndicator": {
+      "description": "Wskaźnik scrollowania na dole",
+      "type": "object",
+      "properties": {
+        "show": { "type": "boolean", "default": true },
+        "type": {
+          "type": "string",
+          "enum": ["text-line", "arrow", "mouse", "chevron"],
+          "default": "text-line"
+        },
+        "text": { "type": "string", "default": "SCROLL" },
+        "position": {
+          "type": "string",
+          "enum": ["center", "left", "right"],
+          "default": "center"
+        },
+        "style": {
+          "type": "object",
+          "properties": {
+            "textSize": { "type": "string", "default": "text-xs" },
+            "textColor": { "type": "string", "default": "text-muted-foreground" },
+            "lineColor": { "type": "string", "default": "from-primary to-transparent" },
+            "lineHeight": { "type": "string", "default": "h-12" }
+          }
+        },
+        "animation": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "type": { "type": "string", "enum": ["bounce", "pulse", "none"], "default": "none" }
+          }
+        }
+      }
+    }
+
+  },
+  "required": ["variant", "headline", "cta"]
+}

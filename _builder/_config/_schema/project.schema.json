@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "project.schema.json",
+  "title": "Project Configuration Schema",
+  "description": "Globalne zmienne dla całego projektu strony",
+
+  "type": "object",
+  "properties": {
+
+    "meta": {
+      "description": "Informacje o projekcie",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Nazwa firmy/projektu" },
+        "tagline": { "type": "string", "description": "Krótki slogan" },
+        "industry": {
+          "type": "string",
+          "enum": ["construction", "services", "manufacturing", "real-estate", "other"],
+          "description": "Branża - wpływa na domyślne teksty i obrazy"
+        },
+        "locale": { "type": "string", "default": "pl-PL" }
+      },
+      "required": ["name", "industry"]
+    },
+
+    "contact": {
+      "description": "Dane kontaktowe",
+      "type": "object",
+      "properties": {
+        "phone": { "type": "string" },
+        "phoneLabel": { "type": "string", "default": "Telefon" },
+        "email": { "type": "string" },
+        "emailLabel": { "type": "string", "default": "Email" },
+        "address": {
+          "type": "object",
+          "properties": {
+            "street": { "type": "string" },
+            "city": { "type": "string" },
+            "zip": { "type": "string" },
+            "country": { "type": "string", "default": "Polska" }
+          }
+        },
+        "nip": { "type": "string" },
+        "regon": { "type": "string" },
+        "social": {
+          "type": "object",
+          "properties": {
+            "facebook": { "type": "string" },
+            "instagram": { "type": "string" },
+            "linkedin": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "theme": {
+      "description": "Ustawienia motywu wizualnego",
+      "type": "object",
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": ["industrial-dark", "clean-light", "corporate", "minimal"],
+          "default": "industrial-dark",
+          "description": "Główny styl strony"
+        },
+        "colors": {
+          "type": "object",
+          "properties": {
+            "primary": { "type": "string", "default": "#FF5E00", "description": "Główny kolor akcentu" },
+            "background": { "type": "string", "default": "#0a0a0a" },
+            "card": { "type": "string", "default": "#171717" },
+            "border": { "type": "string", "default": "#262626" },
+            "text": { "type": "string", "default": "#FAFAFA" },
+            "textMuted": { "type": "string", "default": "#a3a3a3" }
+          }
+        },
+        "fonts": {
+          "type": "object",
+          "properties": {
+            "display": { "type": "string", "default": "Bebas Neue" },
+            "body": { "type": "string", "default": "Work Sans" },
+            "mono": { "type": "string", "default": "system-ui" }
+          }
+        },
+        "borderRadius": {
+          "type": "string",
+          "enum": ["none", "sm", "md", "lg"],
+          "default": "none",
+          "description": "Zaokrąglenie rogów (industrial = none)"
+        }
+      }
+    },
+
+    "layout": {
+      "description": "Ustawienia layoutu",
+      "type": "object",
+      "properties": {
+        "containerWidth": { "type": "string", "default": "1280px" },
+        "sectionPadding": { "type": "string", "default": "py-24" },
+        "gridOverlay": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "size": { "type": "number", "default": 40 },
+            "opacity": { "type": "number", "default": 0.07 }
+          }
+        },
+        "alternatingBackgrounds": { "type": "boolean", "default": true }
+      }
+    },
+
+    "animations": {
+      "description": "Globalne ustawienia animacji",
+      "type": "object",
+      "properties": {
+        "enabled": { "type": "boolean", "default": true },
+        "duration": {
+          "type": "object",
+          "properties": {
+            "fast": { "type": "number", "default": 200 },
+            "normal": { "type": "number", "default": 300 },
+            "slow": { "type": "number", "default": 500 }
+          }
+        },
+        "hoverScale": { "type": "number", "default": 1.05 },
+        "staggerDelay": { "type": "number", "default": 0.1, "description": "Delay między elementami w ms" }
+      }
+    },
+
+    "navigation": {
+      "description": "Konfiguracja nawigacji",
+      "type": "object",
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": ["fixed-transparent", "fixed-solid", "static"],
+          "default": "fixed-transparent"
+        },
+        "logo": {
+          "type": "object",
+          "properties": {
+            "type": { "type": "string", "enum": ["image", "text", "initials"], "default": "initials" },
+            "src": { "type": "string" },
+            "initials": { "type": "string" },
+            "text": { "type": "string" }
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "href": { "type": "string" },
+              "isExternal": { "type": "boolean", "default": false }
+            }
+          }
+        },
+        "cta": {
+          "type": "object",
+          "properties": {
+            "show": { "type": "boolean", "default": true },
+            "type": { "type": "string", "enum": ["phone", "button", "both"], "default": "phone" },
+            "text": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "sections": {
+      "description": "Które sekcje włączyć i w jakiej kolejności",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "enabled": { "type": "boolean", "default": true },
+          "variant": { "type": "string" }
+        }
+      },
+      "default": [
+        { "id": "hero", "variant": "hero-image" },
+        { "id": "why-us", "variant": "why-us-icons" },
+        { "id": "services", "variant": "services-tabs" },
+        { "id": "for-whom", "variant": "for-whom-cards" },
+        { "id": "process", "variant": "process-steps" },
+        { "id": "portfolio", "variant": "portfolio-mosaic" },
+        { "id": "faq", "variant": "faq-accordion" },
+        { "id": "contact", "variant": "contact-map" },
+        { "id": "footer", "variant": "footer-simple" }
+      ]
+    }
+
+  },
+  "required": ["meta", "contact", "theme", "sections"]
+}

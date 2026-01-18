@@ -1,0 +1,207 @@
+{
+  "$schema": "../_schema/project.schema.json",
+
+  "meta": {
+    "name": "Niedziela & Kłusek",
+    "tagline": "Konstrukcje żelbetowe dla budownictwa przemysłowego i mieszkaniowego",
+    "industry": "construction",
+    "locale": "pl-PL"
+  },
+
+  "contact": {
+    "phone": "696 092 434",
+    "phoneLabel": "Telefon (Inżynier)",
+    "email": "pbitarnow@gmail.com",
+    "emailLabel": "Email (Wyceny)",
+    "address": {
+      "street": "ul. Narutowicza 3",
+      "city": "Tarnów",
+      "zip": "33-100",
+      "country": "Polska"
+    },
+    "nip": "993-069-91-28"
+  },
+
+  "theme": {
+    "style": "industrial-dark",
+    "colors": {
+      "primary": "#FF5E00",
+      "background": "#0a0a0a",
+      "card": "#171717",
+      "border": "#262626",
+      "text": "#FAFAFA",
+      "textMuted": "#a3a3a3"
+    },
+    "fonts": {
+      "display": "Bebas Neue",
+      "body": "Work Sans"
+    },
+    "borderRadius": "none"
+  },
+
+  "layout": {
+    "containerWidth": "1280px",
+    "sectionPadding": "py-24",
+    "gridOverlay": {
+      "enabled": true,
+      "size": 40,
+      "opacity": 0.07
+    },
+    "alternatingBackgrounds": true
+  },
+
+  "animations": {
+    "enabled": true,
+    "duration": {
+      "fast": 200,
+      "normal": 300,
+      "slow": 500
+    },
+    "hoverScale": 1.05,
+    "staggerDelay": 0.1
+  },
+
+  "navigation": {
+    "style": "fixed-transparent",
+    "logo": {
+      "type": "initials",
+      "initials": "NK",
+      "text": "NIEDZIELA & KŁUSEK"
+    },
+    "links": [
+      { "label": "Dlaczego my", "href": "#dlaczego-my" },
+      { "label": "Usługi", "href": "#uslugi" },
+      { "label": "Proces", "href": "#jak-pracujemy" },
+      { "label": "Realizacje", "href": "#realizacje" },
+      { "label": "Kontakt", "href": "#kontakt" }
+    ],
+    "cta": {
+      "show": true,
+      "type": "phone",
+      "text": "696 092 434"
+    }
+  },
+
+  "sections": [
+    { "id": "hero", "variant": "hero-image", "enabled": true },
+    { "id": "why-us", "variant": "why-us-icons", "enabled": true },
+    { "id": "services", "variant": "services-tabs", "enabled": true },
+    { "id": "for-whom", "variant": "for-whom-cards", "enabled": true },
+    { "id": "process", "variant": "process-steps", "enabled": true },
+    { "id": "portfolio", "variant": "portfolio-mosaic", "enabled": true },
+    { "id": "faq", "variant": "faq-accordion", "enabled": true },
+    { "id": "contact", "variant": "contact-map", "enabled": true },
+    { "id": "footer", "variant": "footer-simple", "enabled": true }
+  ],
+
+  "hero": {
+    "variant": "hero-image",
+
+    "background": {
+      "type": "image",
+      "image": {
+        "src": "https://images.unsplash.com/photo-1504307651254-35680f356dfd",
+        "overlay": {
+          "gradient": true,
+          "opacity": 0.7
+        }
+      }
+    },
+
+    "gridOverlay": {
+      "show": true,
+      "type": "rebar",
+      "opacity": 0.3
+    },
+
+    "decorativeElements": {
+      "show": true
+    },
+
+    "layout": {
+      "contentPosition": "left",
+      "contentMaxWidth": "max-w-4xl",
+      "minHeight": "min-h-screen",
+      "padding": "py-32"
+    },
+
+    "badge": {
+      "show": true,
+      "text": "KONSTRUKCJE ŻELBETOWE",
+      "style": {
+        "variant": "outlined",
+        "color": "primary",
+        "uppercase": true,
+        "tracking": "wider"
+      }
+    },
+
+    "headline": {
+      "text": [
+        "ŻELBET DLA BUDOWNICTWA",
+        "PRZEMYSŁOWEGO",
+        "I MIESZKANIOWEGO"
+      ],
+      "accentLine": 1,
+      "accentStyle": "primary-color"
+    },
+
+    "subtitle": {
+      "show": true,
+      "text": "Fundamenty, ściany, stropy, zbiorniki. Zespół specjalistów gotowy do wejścia na budowę. Tarnów i 4 województwa południowej Polski."
+    },
+
+    "cta": {
+      "layout": "stacked-mobile",
+      "primary": {
+        "show": true,
+        "text": "Zadzwoń: 696 092 434",
+        "href": "tel:696092434",
+        "type": "phone",
+        "style": {
+          "variant": "solid",
+          "color": "primary",
+          "size": "lg"
+        },
+        "icon": {
+          "show": true,
+          "name": "ArrowRight",
+          "position": "right",
+          "animation": "hover-right"
+        }
+      },
+      "secondary": {
+        "show": true,
+        "text": "Wyślij projekt do wyceny",
+        "type": "scroll",
+        "scrollTo": "#kontakt",
+        "style": {
+          "variant": "outline",
+          "size": "lg"
+        }
+      }
+    },
+
+    "stats": {
+      "show": true,
+      "layout": "grid",
+      "columns": 3,
+      "separator": {
+        "show": true,
+        "type": "border-top"
+      },
+      "items": [
+        { "value": "4", "label": "Województwa zasięgu" },
+        { "value": "24h", "label": "Wycena projektu" },
+        { "value": "100%", "label": "Własny zespół specjalistów" }
+      ]
+    },
+
+    "scrollIndicator": {
+      "show": true,
+      "type": "text-line",
+      "text": "SCROLL",
+      "position": "center"
+    }
+  }
+}
