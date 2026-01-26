@@ -28,13 +28,37 @@ export const metadata: Metadata = {
   description: "Roboty żelbetowe dla budownictwa przemysłowego i mieszkaniowego. Fundamenty, ściany, stropy, zbiorniki. Zespół specjalistów, 4 województwa. Wycena w 24h.",
 };
 
+// Script to prevent FOUC (Flash of Unstyled Content) when loading theme
+const themeScript = `
+  (function() {
+    try {
+      var theme = localStorage.getItem('theme');
+      var validThemes = ['minimal', 'industrial', 'sunny'];
+      if (theme && validThemes.indexOf(theme) !== -1) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'industrial') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } else {
+        document.documentElement.setAttribute('data-theme', 'industrial');
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl" className="dark">
+    <html lang="pl" className="dark" data-theme="industrial" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className={`${inter.variable} ${robotoSlab.variable} ${bebasNeue.variable} ${workSans.variable} font-sans antialiased`}>
         {children}
       </body>

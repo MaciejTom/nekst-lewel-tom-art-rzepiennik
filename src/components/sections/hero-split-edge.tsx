@@ -37,60 +37,67 @@ const buttonVariants = {
 // ============================================
 
 const baseStyles = {
-  section: "relative bg-secondary pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden",
-  decoration: "absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 translate-x-1/4 pointer-events-none",
-  container: "max-w-[1280px] mx-auto px-4 md:px-8 relative z-10",
-  grid: "grid lg:grid-cols-2 gap-12 items-center",
+  // Sekcja na cala szerokosc
+  section: "relative bg-background min-h-[80vh] flex items-center overflow-hidden",
 
-  // Left content
-  content: "flex flex-col gap-6 lg:max-w-xl",
+  // Grid: tekst w kontenerze, obraz do krawedzi
+  grid: "grid lg:grid-cols-2 w-full",
 
-  // Badge (rounded-lg używa --radius-lg z CSS)
-  badge: "inline-flex items-center gap-2 bg-background px-3 py-1 rounded-lg border border-border w-fit shadow-sm",
+  // Lewa strona - tekst w kontenerze
+  contentSide: "flex items-center py-16 lg:py-24",
+  contentInner: "w-full max-w-[640px] ml-auto px-6 md:px-12 lg:pr-16",
+
+  // Badge
+  badge: "inline-flex items-center gap-2 bg-secondary px-3 py-1 rounded-lg border border-border w-fit shadow-sm mb-6",
   badgeDot: "flex h-2 w-2 rounded-full",
   badgeText: "text-xs font-bold uppercase tracking-wider text-muted-foreground",
 
   // Headline
-  headline: "text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-foreground font-display",
+  headline: "text-4xl lg:text-5xl xl:text-6xl font-black leading-[1.1] tracking-tight text-foreground font-display mb-6",
   headlineHighlight: "bg-primary px-2 text-primary-foreground",
 
   // Subheadline
-  subheadline: "text-lg text-muted-foreground font-medium leading-relaxed max-w-md",
+  subheadline: "text-lg text-muted-foreground font-medium leading-relaxed max-w-md mb-8",
 
   // CTA
-  ctaWrapper: "flex flex-wrap gap-4 pt-4",
-  ctaPrimary: "flex items-center justify-center gap-2 h-14 px-8 bg-primary text-primary-foreground text-base font-bold rounded-lg shadow-[0_4px_0_0_hsl(var(--primary)/0.7)] active:shadow-none active:translate-y-1 transition-all",
-  ctaSecondary: "flex items-center justify-center gap-2 h-14 px-8 bg-background border-2 border-foreground text-foreground text-base font-bold rounded-lg hover:bg-muted transition-colors",
+  ctaWrapper: "flex flex-wrap gap-4",
 
   // Stats
-  statsWrapper: "flex items-center gap-6 pt-6 border-t border-border mt-4",
+  statsWrapper: "flex items-center gap-6 pt-8 border-t border-border mt-8",
   statItem: "flex items-center gap-3",
   statIcon: "bg-primary/20 p-2 rounded-full text-foreground",
   statValue: "font-black text-xl leading-none",
   statLabel: "text-xs font-medium text-muted-foreground uppercase",
   statDivider: "w-px h-10 bg-border",
 
-  // Image
-  imageWrapper: "relative lg:h-[600px] w-full flex items-center justify-center",
-  imageContainer: "relative w-full aspect-[4/3] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-2xl bg-background border-4 border-background",
+  // Prawa strona - obraz do krawedzi
+  imageSide: "relative hidden lg:block",
+  imageInner: "absolute inset-0",
   image: "w-full h-full object-cover",
 
+  // Mobile image - widoczny na mobile pod tekstem
+  imageMobile: "relative w-full aspect-[16/10] lg:hidden",
+  imageMobileInner: "absolute inset-0",
+
   // Image overlay
-  imageOverlay: "absolute bottom-6 left-6 bg-primary px-6 py-4 rounded-xl shadow-lg flex flex-col items-start gap-1 max-w-[200px]",
+  imageOverlay: "absolute bottom-8 left-8 bg-primary px-6 py-4 rounded-xl shadow-lg flex flex-col items-start gap-1 max-w-[200px] z-10",
   overlayLabel: "text-xs font-bold uppercase tracking-wider text-primary-foreground/70",
   overlayValue: "text-2xl font-black text-primary-foreground",
+
+  // Dekoracyjna linia na krawedzi
+  edgeLine: "absolute top-0 left-0 bottom-0 w-px bg-border",
 } as const
 
 // ============================================
 // COMPONENT
 // ============================================
 
-interface HeroSplitProps {
+interface HeroSplitEdgeProps {
   content: HeroSplitContent
   className?: string
 }
 
-export function HeroSplit({ content, className }: HeroSplitProps) {
+export function HeroSplitEdge({ content, className }: HeroSplitEdgeProps) {
   const {
     badge,
     headline,
@@ -135,13 +142,10 @@ export function HeroSplit({ content, className }: HeroSplitProps) {
 
   return (
     <section className={cn(baseStyles.section, className)}>
-      {/* Decorative skewed background */}
-      <div className={baseStyles.decoration} />
-
-      <div className={baseStyles.container}>
-        <div className={baseStyles.grid}>
-          {/* Left: Content */}
-          <div className={baseStyles.content}>
+      <div className={baseStyles.grid}>
+        {/* Left: Text content - contained */}
+        <div className={baseStyles.contentSide}>
+          <div className={baseStyles.contentInner}>
             {/* Badge */}
             {badge && (
               <div className={baseStyles.badge}>
@@ -167,7 +171,10 @@ export function HeroSplit({ content, className }: HeroSplitProps) {
             <div className={baseStyles.ctaWrapper}>
               <a
                 href={ctaPrimary.href}
-                className={cn("flex items-center justify-center gap-2 h-14 px-8 text-base font-bold", buttonVariants.primary[buttonVariant])}
+                className={cn(
+                  "flex items-center justify-center gap-2 h-14 px-8 text-base font-bold",
+                  buttonVariants.primary[buttonVariant]
+                )}
               >
                 {ctaPrimary.text}
                 <ArrowRight className="w-5 h-5" />
@@ -176,7 +183,10 @@ export function HeroSplit({ content, className }: HeroSplitProps) {
               {ctaSecondary && (
                 <a
                   href={ctaSecondary.href}
-                  className={cn("flex items-center justify-center gap-2 h-14 px-8 text-base font-bold", buttonVariants.secondary[buttonVariant])}
+                  className={cn(
+                    "flex items-center justify-center gap-2 h-14 px-8 text-base font-bold",
+                    buttonVariants.secondary[buttonVariant]
+                  )}
                 >
                   {ctaSecondary.text}
                 </a>
@@ -205,25 +215,36 @@ export function HeroSplit({ content, className }: HeroSplitProps) {
               </div>
             )}
           </div>
+        </div>
 
-          {/* Right: Image */}
-          <div className={baseStyles.imageWrapper}>
-            <div className={baseStyles.imageContainer}>
-              <img
-                src={image.src}
-                alt={image.alt}
-                className={baseStyles.image}
-              />
+        {/* Right: Image - bleeds to edge (desktop) */}
+        <div className={baseStyles.imageSide}>
+          <div className={baseStyles.edgeLine} />
+          <div className={baseStyles.imageInner}>
+            <img
+              src={image.src}
+              alt={image.alt}
+              className={baseStyles.image}
+            />
 
-              {/* Overlay card */}
-              {imageOverlay && (
-                <div className={baseStyles.imageOverlay}>
-                  <span className={baseStyles.overlayLabel}>{imageOverlay.label}</span>
-                  <span className={baseStyles.overlayValue}>{imageOverlay.value}</span>
-                </div>
-              )}
-            </div>
+            {imageOverlay && (
+              <div className={baseStyles.imageOverlay}>
+                <span className={baseStyles.overlayLabel}>{imageOverlay.label}</span>
+                <span className={baseStyles.overlayValue}>{imageOverlay.value}</span>
+              </div>
+            )}
           </div>
+        </div>
+      </div>
+
+      {/* Mobile image - below text */}
+      <div className={baseStyles.imageMobile}>
+        <div className={baseStyles.imageMobileInner}>
+          <img
+            src={image.src}
+            alt={image.alt}
+            className={baseStyles.image}
+          />
         </div>
       </div>
     </section>

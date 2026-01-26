@@ -1,9 +1,9 @@
 import { Navigation } from "@/components/sections/navigation"
 import { HeroSection } from "@/components/sections/hero-section"
 import { HeroSplit } from "@/components/sections/hero-split"
-import { WhyUsAlternative } from "@/components/sections/why-us-alternative"
-import { ForWhomSection } from "@/components/sections/for-whom-section"
+import { WhyUsSection } from "@/components/sections/why-us-section"
 import { ServicesSection } from "@/components/sections/services-section"
+import { ForWhomSection } from "@/components/sections/for-whom-section"
 import { ProcessSection } from "@/components/sections/process-section"
 import { PortfolioSection } from "@/components/sections/portfolio-section"
 import { FaqSection } from "@/components/sections/faq-section"
@@ -11,7 +11,21 @@ import { ContactSection } from "@/components/sections/contact-section"
 import { Footer } from "@/components/sections/Footer"
 
 // Content
-import { navigationContent, heroContent, heroContent2, heroContent3, heroSplitContent } from "@/content/niedziela-klusek"
+import {
+  navigationContent,
+  heroContent,
+  heroContent2,
+  heroContent3,
+  heroSplitContent,
+  whyUsContent,
+  servicesContent,
+  forWhomContent,
+  processContent,
+  portfolioContent,
+  faqContent,
+  contactContent,
+  footerContent,
+} from "@/content/niedziela-klusek"
 
 export default function HomePage() {
   return (
@@ -30,15 +44,15 @@ export default function HomePage() {
         {/* Hero 4 - Split (Fixman - tekst + zdjęcie) */}
         <HeroSplit content={heroSplitContent} />
 
-        <WhyUsAlternative />
-        <ServicesSection />
-        <ForWhomSection />
-        <ProcessSection />
-        <PortfolioSection />
-        <FaqSection />
-        <ContactSection />
+        <WhyUsSection content={whyUsContent} />
+        <ServicesSection content={servicesContent} />
+        <ForWhomSection content={forWhomContent} />
+        <ProcessSection content={processContent} />
+        <PortfolioSection content={portfolioContent} />
+        <FaqSection content={faqContent} />
+        <ContactSection content={contactContent} />
       </main>
-      <Footer />
+      <Footer content={footerContent} />
     </>
   )
 }

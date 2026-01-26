@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import type { HeroContent } from "@/types/content"
+import type { HeroContent } from "@/types"
 
 // ============================================
 // DEFAULTS - wartości domyślne
@@ -46,7 +46,7 @@ const buttonVariants = {
 // ============================================
 
 const baseStyles = {
-  container: "container px-[5%] py-32 relative z-10",
+  container: "container mx-auto px-[5%] py-32 relative z-10",
   content: "max-w-4xl",
   contentCenter: "max-w-4xl mx-auto text-center",
 
@@ -144,6 +144,7 @@ export function HeroSection({ content, className }: HeroSectionProps) {
     'screen': 'min-h-screen',
     '80vh': 'min-h-[80vh]',
     '70vh': 'min-h-[70vh]',
+    '60vh': 'min-h-[60vh]',
   }[minHeight]
 
   // Render headline
@@ -188,6 +189,7 @@ export function HeroSection({ content, className }: HeroSectionProps) {
       className={cn(
         minHeightClass,
         "flex items-center relative overflow-hidden bg-background text-foreground",
+        isCenter && "justify-center",
         className
       )}
     >
