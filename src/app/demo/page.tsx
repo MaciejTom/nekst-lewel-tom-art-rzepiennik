@@ -13,7 +13,6 @@ import { Footer } from "@/components/sections/Footer"
 import { ThemeSwitcher } from "@/components/theme-switcher"
 import { SectionDivider } from "@/components/showcase/section-divider"
 import { ShowcaseNav } from "@/components/showcase/showcase-nav"
-
 // Demo Content
 import {
   demoNavigation,

@@ -1,0 +1,28 @@
+/**
+ * Wireframe Theme
+ * Neutralne CSS variables — ten sam komponent, inny wyglad.
+ * Zadnych hardcoded kolorow w komponentach.
+ */
+
+html, html[data-theme] {
+  --background: #ffffff !important;
+  --foreground: #1a1a1a !important;
+  --card: #f9f9f9 !important;
+  --card-foreground: #1a1a1a !important;
+  --primary: #888888 !important;
+  --primary-foreground: #ffffff !important;
+  --secondary: #e5e5e5 !important;
+  --secondary-foreground: #333333 !important;
+  --muted: #f0f0f0 !important;
+  --muted-foreground: #999999 !important;
+  --accent: #aaaaaa !important;
+  --accent-foreground: #ffffff !important;
+  --border: #d4d4d4 !important;
+  --input: #ffffff !important;
+  --ring: #bbbbbb !important;
+  --radius: 0px !important;
+
+  --font-display: system-ui, -apple-system, sans-serif !important;
+  --font-work: system-ui, -apple-system, sans-serif !important;
+  --font-sans: system-ui, -apple-system, sans-serif !important;
+}
