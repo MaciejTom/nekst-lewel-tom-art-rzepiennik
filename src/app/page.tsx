@@ -7,6 +7,7 @@ import { ServicesOverlayWireframe } from "@/components/wireframe/services-overla
 import { ServicesCardsWireframe } from "@/components/wireframe/services-cards-wireframe"
 import { ReviewsWireframe } from "@/components/wireframe/reviews-wireframe"
 import { FeaturesSplitWireframe } from "@/components/wireframe/features-split-wireframe"
+import { HeroSplitWireframe } from "@/components/wireframe/hero-split-wireframe"
 import { wireframeHero } from "@/content/wireframe/hero"
 import { wireframePortfolio } from "@/content/wireframe/portfolio"
 import { wireframeServicesEditorial } from "@/content/wireframe/services-editorial"
@@ -15,6 +16,7 @@ import { wireframeServicesOverlay } from "@/content/wireframe/services-overlay"
 import { wireframeServicesCards } from "@/content/wireframe/services-cards"
 import { wireframeReviews } from "@/content/wireframe/reviews"
 import { wireframeFeaturesSplit } from "@/content/wireframe/features-split"
+import { wireframeHeroSplit } from "@/content/wireframe/hero-split"
 
 export default function HomePage() {
   return (
@@ -29,9 +31,14 @@ export default function HomePage() {
       </header>
 
       <main>
-        <SectionGroup title="Hero" href="/hero">
+        <SectionGroup title="Hero Full-screen" href="/hero">
           <ComponentLabel label="Full-screen, badge + headline + CTA + stats + scroll" variant="wireframe" />
           <HeroWireframe content={wireframeHero} />
+        </SectionGroup>
+
+        <SectionGroup title="Hero Split" href="/hero">
+          <ComponentLabel label="2-col grid, content left + image right, stats inline, image badge" variant="wireframe" />
+          <HeroSplitWireframe content={wireframeHeroSplit} />
         </SectionGroup>
 
         <SectionGroup title="Services Editorial" href="/services-editorial">
