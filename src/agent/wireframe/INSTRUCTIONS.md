@@ -276,6 +276,7 @@ src/content/{client}/{name}.ts              — content klienta
 | Overlay Cards | Tall cards z image bg, gradient, hover | `src/agent/wireframe/originals/overlay-cards.html` |
 | Editorial Alternating | Alternating image+text rows z step badges | `src/agent/wireframe/originals/editorial-alternating.html` |
 | Services Icon Grid | Centered header + 4-col icon cards, no images | `src/agent/wireframe/originals/services-icon-grid.html` |
+| Services Cards | Image cards + features list, left-aligned header | `src/agent/wireframe/originals/services-cards.tsx` |
 
 Każdy oryginał ma komentarz na górze wskazujący powiązany wireframe i spec.
 
@@ -288,6 +289,7 @@ Każdy oryginał ma komentarz na górze wskazujący powiązany wireframe i spec.
 | ServicesOverlayWireframe | Overlay cards flex-wrap 3+2, image bg + content overlay | `src/components/wireframe/services-overlay-wireframe.tsx` |
 | ServicesEditorialWireframe | Alternating 50/50 image+text rows, step badges | `src/components/wireframe/services-editorial-wireframe.tsx` |
 | ServicesIconGridWireframe | Centered header + 4-col icon cards, no images | `src/components/wireframe/services-icon-grid-wireframe.tsx` |
+| ServicesCardsWireframe | Image cards + features list, flex-wrap dynamic grid + CTA card | `src/components/wireframe/services-cards-wireframe.tsx` |
 
 ## Referencja: istniejące specs
 
@@ -297,3 +299,4 @@ Każdy oryginał ma komentarz na górze wskazujący powiązany wireframe i spec.
 | Overlay Cards | Tall cards with image bg, gradient, hover effects | `src/agent/wireframe/specs/overlay-cards.md` |
 | Editorial Alternating | Alternating image+text rows with decorative borders | `src/agent/wireframe/specs/editorial-alternating.md` |
 | Services Icon Grid | Centered header + 4-col icon cards, dark theme, hover invert | `src/agent/wireframe/specs/services-icon-grid.md` |
+| Services Cards | Image cards + features, font-serif, shadow-md, h2-accent | `src/agent/wireframe/specs/services-cards.md` |

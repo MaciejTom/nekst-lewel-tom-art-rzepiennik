@@ -8,9 +8,16 @@ export interface ServiceIconGridItem {
   description: string
 }
 
+export interface ServiceIconGridCtaCard {
+  title: string
+  description?: string
+  buttonText: string
+}
+
 export interface ServiceIconGridContent {
   tagline: string
   title: string
   subtitle: string
   services: ServiceIconGridItem[]
+  ctaCard?: ServiceIconGridCtaCard
 }

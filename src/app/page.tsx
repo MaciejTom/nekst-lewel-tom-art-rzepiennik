@@ -3,14 +3,29 @@ import { PortfolioWireframe } from "@/components/wireframe/portfolio-wireframe"
 import { ServicesEditorialWireframe } from "@/components/wireframe/services-editorial-wireframe"
 import { ServicesIconGridWireframe } from "@/components/wireframe/services-icon-grid-wireframe"
 import { ServicesOverlayWireframe } from "@/components/wireframe/services-overlay-wireframe"
+import { ServicesCardsWireframe } from "@/components/wireframe/services-cards-wireframe"
 import { PortfolioSection } from "@/components/sections/portfolio-section"
 import { ServicesCardsSection } from "@/components/sections/services-cards-section"
 import { ServicesEditorialSection } from "@/components/sections/services-editorial-section"
 import { ServicesOverlaySection } from "@/components/sections/services-overlay-section"
 import { wireframeHero } from "@/content/wireframe/hero"
-import { wireframePortfolio } from "@/content/wireframe/portfolio"
+import {
+  wireframePortfolio,
+  wireframePortfolioF4n,
+  wireframePortfolio2f,
+  wireframePortfolio2w4n,
+  wireframePortfolio3n,
+  wireframePortfolio4n,
+  wireframePortfolio6n,
+} from "@/content/wireframe/portfolio"
 import { wireframeServicesEditorial } from "@/content/wireframe/services-editorial"
-import { wireframeServicesIconGrid } from "@/content/wireframe/services-icon-grid"
+import {
+  wireframeServicesIconGrid,
+  wireframeIconGrid3,
+  wireframeIconGrid6,
+  wireframeIconGrid3Cta,
+  wireframeIconGrid4Cta,
+} from "@/content/wireframe/services-icon-grid"
 import {
   wireframeServicesOverlay,
   wireframeOverlay4,
@@ -18,6 +33,13 @@ import {
   wireframeOverlay3Cta,
   wireframeOverlay5Cta,
 } from "@/content/wireframe/services-overlay"
+import {
+  wireframeServicesCards,
+  wireframeCards4,
+  wireframeCards3,
+  wireframeCards3Cta,
+  wireframeCards5Cta,
+} from "@/content/wireframe/services-cards"
 import { tomArtPortfolio } from "@/content/tom-art/portfolio"
 import { tomArtServices } from "@/content/tom-art/services"
 import { tomArtServicesEditorial } from "@/content/tom-art/services-editorial"
@@ -114,7 +136,27 @@ export default function HomePage() {
         {/* ── SERVICES CARDS ── */}
         <SectionGroup title="Services Cards">
           <div className="border-b border-dashed border-border">
-            <ComponentLabel label="ServicesCardsSection — karty 3+2 grid, shadow-md" variant="styled" />
+            <ComponentLabel label="5 items → 3+2 centered" variant="wireframe" />
+            <ServicesCardsWireframe content={wireframeServicesCards} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="4 items → 2+2" variant="wireframe" />
+            <ServicesCardsWireframe content={wireframeCards4} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="3 items → 3 in a row" variant="wireframe" />
+            <ServicesCardsWireframe content={wireframeCards3} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="3 items + CTA card → 2+2" variant="wireframe" />
+            <ServicesCardsWireframe content={wireframeCards3Cta} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="5 items + CTA card → 3+3" variant="wireframe" />
+            <ServicesCardsWireframe content={wireframeCards5Cta} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="ServicesCardsSection — styled, serif, shadow-md, h2-accent" variant="styled" />
             <ServicesCardsSection content={tomArtServices} />
           </div>
         </SectionGroup>
@@ -122,19 +164,61 @@ export default function HomePage() {
         {/* ── SERVICES ICON GRID ── */}
         <SectionGroup title="Services Icon Grid">
           <div className="border-b border-dashed border-border">
-            <ComponentLabel label="ServicesIconGridWireframe — centered header + 4-col icon cards, no images" variant="wireframe" />
+            <ComponentLabel label="4 items → 4 in a row" variant="wireframe" />
             <ServicesIconGridWireframe content={wireframeServicesIconGrid} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="3 items → 3 in a row" variant="wireframe" />
+            <ServicesIconGridWireframe content={wireframeIconGrid3} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="6 items → 3+3" variant="wireframe" />
+            <ServicesIconGridWireframe content={wireframeIconGrid6} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="3 items + CTA card → 4 in a row" variant="wireframe" />
+            <ServicesIconGridWireframe content={wireframeIconGrid3Cta} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="4 items + CTA card → 3+2 centered" variant="wireframe" />
+            <ServicesIconGridWireframe content={wireframeIconGrid4Cta} />
           </div>
         </SectionGroup>
 
         {/* ── PORTFOLIO ── */}
         <SectionGroup title="Portfolio">
+          {/* Mosaic mode (CSS grid 4-col — featured/wide) */}
           <div className="border-b border-dashed border-border">
-            <ComponentLabel label="PortfolioWireframe — mosaic grid: featured (2x2) + normal (1x1) + wide (2x1)" variant="wireframe" />
+            <ComponentLabel label="Mosaic: 1F + 2N + 1W (4 items)" variant="wireframe" />
             <PortfolioWireframe content={wireframePortfolio} />
           </div>
           <div className="border-b border-dashed border-border">
-            <ComponentLabel label="PortfolioSection — framer-motion, corner accents, next/image" variant="styled" />
+            <ComponentLabel label="Mosaic: 1F + 4N (5 items)" variant="wireframe" />
+            <PortfolioWireframe content={wireframePortfolioF4n} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="Mosaic: 2F (2 items)" variant="wireframe" />
+            <PortfolioWireframe content={wireframePortfolio2f} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="Mosaic: 2W + 4N (6 items)" variant="wireframe" />
+            <PortfolioWireframe content={wireframePortfolio2w4n} />
+          </div>
+          {/* Gallery mode (flex-wrap — all normal) */}
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="Gallery: 3N → 3 in a row" variant="wireframe" />
+            <PortfolioWireframe content={wireframePortfolio3n} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="Gallery: 4N → 4 in a row" variant="wireframe" />
+            <PortfolioWireframe content={wireframePortfolio4n} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="Gallery: 6N → 3+3" variant="wireframe" />
+            <PortfolioWireframe content={wireframePortfolio6n} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="PortfolioSection — styled, framer-motion, corner accents" variant="styled" />
             <PortfolioSection content={tomArtPortfolio} />
           </div>
         </SectionGroup>

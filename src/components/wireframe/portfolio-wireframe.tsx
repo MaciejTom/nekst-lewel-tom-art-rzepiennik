@@ -16,11 +16,23 @@ const w = {
   statLabel: "text-xs text-muted-foreground uppercase",
   statDivider: "w-px h-12 bg-border",
 
-  grid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",
+  // Mosaic mode — CSS grid 4-col (for featured/wide items)
+  gridMosaic: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",
+
+  // Gallery mode — flex-wrap (for all-normal items)
+  gridFlex: "flex flex-wrap justify-center gap-4",
+
   card: "relative border border-dashed border-border overflow-hidden",
+
+  // Mosaic card sizes (CSS grid spans)
   cardFeatured: "col-span-1 md:col-span-2 row-span-2 min-h-[400px]",
   cardNormal: "col-span-1 aspect-square",
   cardWide: "col-span-1 md:col-span-2 aspect-[2/1]",
+
+  // Gallery card widths (flex-wrap)
+  cardW3: "w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] aspect-square",
+  cardW2: "w-full md:w-[calc(50%-0.5rem)] aspect-square",
+  cardW4: "w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)] aspect-square",
 
   placeholder: "w-full h-full bg-muted flex flex-col items-center justify-center gap-2",
   placeholderIcon: "w-10 h-10 text-muted-foreground/30",
@@ -43,11 +55,24 @@ interface PortfolioWireframeProps {
 export function PortfolioWireframe({ content }: PortfolioWireframeProps) {
   const { tagline, title, titleAccent, stats, projects, galleryButton } = content
 
-  const getCardSize = (project: typeof projects[0]) => {
+  const hasMosaic = projects.some((p) => p.featured || p.wide)
+
+  // Mosaic: CSS grid with col/row spans
+  const getMosaicSize = (project: (typeof projects)[0]) => {
     if (project.featured) return w.cardFeatured
     if (project.wide) return w.cardWide
     return w.cardNormal
   }
+
+  // Gallery: flex-wrap width based on total items
+  const getGalleryWidth = (total: number) => {
+    if (total <= 2) return w.cardW2
+    if (total <= 3 || total === 6 || total === 9) return w.cardW3
+    return w.cardW4
+  }
+
+  const gridClass = hasMosaic ? w.gridMosaic : w.gridFlex
+  const galleryWidth = !hasMosaic ? getGalleryWidth(projects.length) : ""
 
   return (
     <section className={w.section}>
@@ -77,9 +102,12 @@ export function PortfolioWireframe({ content }: PortfolioWireframeProps) {
         </div>
 
         {/* Grid */}
-        <div className={w.grid}>
+        <div className={gridClass}>
           {projects.map((project, i) => (
-            <div key={i} className={`${w.card} ${getCardSize(project)}`}>
+            <div
+              key={i}
+              className={`${w.card} ${hasMosaic ? getMosaicSize(project) : galleryWidth}`}
+            >
               {/* Image placeholder */}
               <div className={w.placeholder}>
                 <ImageIcon className={w.placeholderIcon} />

@@ -1,5 +1,5 @@
 /**
- * Service Cards Types (Usługi — wariant karty)
+ * Service Cards Types (Usługi — wariant karty z obrazem + features)
  */
 
 export interface ServiceCardItem {
@@ -9,8 +9,15 @@ export interface ServiceCardItem {
   image?: string
 }
 
+export interface ServiceCardsCtaCard {
+  title: string
+  description?: string
+  buttonText: string
+}
+
 export interface ServiceCardsContent {
   title: string
   subtitle?: string
   services: ServiceCardItem[]
+  ctaCard?: ServiceCardsCtaCard
 }

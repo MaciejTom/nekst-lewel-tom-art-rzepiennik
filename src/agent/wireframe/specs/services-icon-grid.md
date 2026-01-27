@@ -64,10 +64,35 @@ No images, no feature lists.
 
 ---
 
+## Item Count Behavior
+
+Grid uzywa `flex flex-wrap justify-center` z dynamiczna szerokoscia kart:
+- total = 2: karty 50% (2 per row)
+- total = 4 lub 8: karty 25% (4 per row)
+- w pozostalych: karty 33% (3 per row)
+
+Przykladowe uklady:
+- 3 items → 3 in a row (33%)
+- 4 items → 4 in a row (25%)
+- 6 items → 3+3 (33%)
+- 3 items + CTA card → 4 in a row (25%, total=4)
+- 4 items + CTA card → 3+2 centered (33%, total=5)
+
+## CTA Card (optional, in-grid)
+
+- **Wireframe:** bg-muted/50, dashed border, centered text + button placeholder
+- Styled options:
+  - Glowing secondary: `bg-secondary shadow-[0_0_60px_-12px_var(--secondary)] text-secondary-foreground`
+  - Gradient glow: `bg-gradient-to-br from-secondary via-secondary/90 to-primary/20 shadow-2xl`
+  - Solid primary: `bg-primary text-primary-foreground shadow-lg`
+  - Subtle: `bg-card border-2 border-primary/20`
+
+---
+
 ## Unique Elements
 
 - **Tagline** is `text-primary` with `font-bold` (not just tracking-widest uppercase)
 - **Section** uses `border-y` (top + bottom border) which is a decorative separator
 - **Icon box** has `rounded-lg` (not rounded-full) and inverts on hover (bg + text swap)
-- **No CTA**, no features list — pure icon + text cards
+- **Opcjonalna CTA card** w gridzie, brak features list — pure icon + text cards
 - **Dark theme** throughout: `bg-surface-dark`, `bg-background-dark`, `text-white`, `text-gray-400`
