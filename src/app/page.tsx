@@ -43,71 +43,64 @@ export default function HomePage() {
       </header>
 
       <main>
-        {/* ── STYLED (originals) ─────────────────────────── */}
-
-        <SectionGroup title="Services Editorial — Styled" href="/services-editorial">
-          <ComponentLabel label="ServicesEditorialSection — serif, Material Symbols, dekoracyjne ramki" variant="styled" />
-          <ServicesEditorialSection content={tomArtServicesEditorial} />
-        </SectionGroup>
-
-        <SectionGroup title="Services Overlay — Styled" href="/services-overlay">
-          <ComponentLabel label="ServicesOverlaySection — gradient, hover scale, expanding line" variant="styled" />
-          <ServicesOverlaySection content={tomArtServicesOverlay} />
-        </SectionGroup>
-
-        <SectionGroup title="Services Cards — Styled" href="/services-cards">
-          <ComponentLabel label="ServicesCardsSection — serif, shadow-md, h2-accent" variant="styled" />
-          <ServicesCardsSection content={tomArtServices} />
-        </SectionGroup>
-
-        <SectionGroup title="Portfolio — Styled" href="/portfolio">
-          <ComponentLabel label="PortfolioSection — framer-motion, corner accents" variant="styled" />
-          <PortfolioSection content={tomArtPortfolio} />
-        </SectionGroup>
-
-        {/* ── WIREFRAMES ─────────────────────────────────── */}
-
+        {/* ── Hero Full-screen (brak styled) ──────────── */}
         <SectionGroup title="Hero Full-screen" href="/hero">
           <ComponentLabel label="Full-screen, badge + headline + CTA + stats + scroll" variant="wireframe" />
           <HeroWireframe content={wireframeHero} />
         </SectionGroup>
 
+        {/* ── Hero Split (brak styled) ────────────────── */}
         <SectionGroup title="Hero Split" href="/hero">
           <ComponentLabel label="2-col grid, content left + image right, stats inline, image badge" variant="wireframe" />
           <HeroSplitWireframe content={wireframeHeroSplit} />
         </SectionGroup>
 
+        {/* ── Services Editorial ───────────────────────── */}
         <SectionGroup title="Services Editorial" href="/services-editorial">
+          <ComponentLabel label="ServicesEditorialSection — serif, Material Symbols, dekoracyjne ramki" variant="styled" />
+          <ServicesEditorialSection content={tomArtServicesEditorial} />
           <ComponentLabel label="Alternating image+text rows, step badges" variant="wireframe" />
           <ServicesEditorialWireframe content={wireframeServicesEditorial} />
         </SectionGroup>
 
+        {/* ── Services Overlay ─────────────────────────── */}
         <SectionGroup title="Services Overlay" href="/services-overlay">
+          <ComponentLabel label="ServicesOverlaySection — gradient, hover scale, expanding line" variant="styled" />
+          <ServicesOverlaySection content={tomArtServicesOverlay} />
           <ComponentLabel label="Overlay cards 5 items (3+2)" variant="wireframe" />
           <ServicesOverlayWireframe content={wireframeServicesOverlay} />
         </SectionGroup>
 
+        {/* ── Services Cards ───────────────────────────── */}
         <SectionGroup title="Services Cards" href="/services-cards">
+          <ComponentLabel label="ServicesCardsSection — serif, shadow-md, h2-accent" variant="styled" />
+          <ServicesCardsSection content={tomArtServices} />
           <ComponentLabel label="Image cards + features, 5 items (3+2)" variant="wireframe" />
           <ServicesCardsWireframe content={wireframeServicesCards} />
         </SectionGroup>
 
+        {/* ── Services Icon Grid (brak styled) ────────── */}
         <SectionGroup title="Services Icon Grid" href="/services-icon-grid">
           <ComponentLabel label="Icon cards 4 in a row, no images" variant="wireframe" />
           <ServicesIconGridWireframe content={wireframeServicesIconGrid} />
         </SectionGroup>
 
+        {/* ── Features Split (brak styled) ────────────── */}
         <SectionGroup title="Features Split" href="/features-split">
           <ComponentLabel label="2-col: tagline + title + features checklist + CTA | image" variant="wireframe" />
           <FeaturesSplitWireframe content={wireframeFeaturesSplit} />
         </SectionGroup>
 
+        {/* ── Reviews (brak styled) ───────────────────── */}
         <SectionGroup title="Reviews" href="/reviews">
           <ComponentLabel label="3-col grid, stars + quote + author, featured card" variant="wireframe" />
           <ReviewsWireframe content={wireframeReviews} />
         </SectionGroup>
 
+        {/* ── Portfolio ────────────────────────────────── */}
         <SectionGroup title="Portfolio" href="/portfolio">
+          <ComponentLabel label="PortfolioSection — framer-motion, corner accents" variant="styled" />
+          <PortfolioSection content={tomArtPortfolio} />
           <ComponentLabel label="Mosaic: 1F + 2N + 1W (4 items)" variant="wireframe" />
           <PortfolioWireframe content={wireframePortfolio} />
         </SectionGroup>
