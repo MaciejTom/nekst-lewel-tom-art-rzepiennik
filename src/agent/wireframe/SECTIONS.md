@@ -2,7 +2,7 @@
 
 > **UWAGA:** Aktualizuj ta tabele po kazdym dodaniu/usunieciu wireframe'a lub styled komponentu.
 
-## Sekcje (7)
+## Sekcje (8)
 
 | # | Sekcja | Layout | Wireframe | Styled | Spec | Oryginal |
 |---|--------|--------|-----------|--------|------|----------|
@@ -13,6 +13,7 @@
 | 5 | **Services Cards** | Flex-wrap image cards + features. Dynamic grid (2-col/3-col) + opcjonalna CTA card. Left-aligned header. | `services-cards-wireframe.tsx` | `services-cards-section.tsx` | `services-cards.md` | `services-cards.tsx` |
 | 6 | **Portfolio** | Dual mode: Mosaic (CSS grid 4-col, featured/wide) lub Gallery (flex-wrap, all normal). 7 wariantow. Stats w headerze. | `portfolio-wireframe.tsx` | `portfolio-section.tsx` | — | — |
 | 7 | **Services Icon Grid** | Flex-wrap icon cards + opcjonalna CTA card. Dynamic grid (3/4-col). Centered header. No images. 5 wariantow. | `services-icon-grid-wireframe.tsx` | — | `services-icon-grid.md` | `services-icon-grid.html` |
+| 8 | **Reviews** | 3-col grid kart z opiniami. Rating (stars) + cytat + autor (avatar + name + label). Featured card. Bottom link. | `reviews-wireframe.tsx` | — | `reviews.md` | w spec |
 
 ## Brakuje (TODO)
 
@@ -20,6 +21,7 @@
 - Hero Split: styled komponent
 - Portfolio: spec + oryginal
 - Services Icon Grid: styled komponent
+- Reviews: styled komponent
 
 ## Legenda
 

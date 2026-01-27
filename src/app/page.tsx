@@ -5,12 +5,14 @@ import { ServicesEditorialWireframe } from "@/components/wireframe/services-edit
 import { ServicesIconGridWireframe } from "@/components/wireframe/services-icon-grid-wireframe"
 import { ServicesOverlayWireframe } from "@/components/wireframe/services-overlay-wireframe"
 import { ServicesCardsWireframe } from "@/components/wireframe/services-cards-wireframe"
+import { ReviewsWireframe } from "@/components/wireframe/reviews-wireframe"
 import { wireframeHero } from "@/content/wireframe/hero"
 import { wireframePortfolio } from "@/content/wireframe/portfolio"
 import { wireframeServicesEditorial } from "@/content/wireframe/services-editorial"
 import { wireframeServicesIconGrid } from "@/content/wireframe/services-icon-grid"
 import { wireframeServicesOverlay } from "@/content/wireframe/services-overlay"
 import { wireframeServicesCards } from "@/content/wireframe/services-cards"
+import { wireframeReviews } from "@/content/wireframe/reviews"
 
 export default function HomePage() {
   return (
@@ -48,6 +50,11 @@ export default function HomePage() {
         <SectionGroup title="Services Icon Grid" href="/services-icon-grid">
           <ComponentLabel label="Icon cards 4 in a row, no images" variant="wireframe" />
           <ServicesIconGridWireframe content={wireframeServicesIconGrid} />
+        </SectionGroup>
+
+        <SectionGroup title="Reviews" href="/reviews">
+          <ComponentLabel label="3-col grid, stars + quote + author, featured card" variant="wireframe" />
+          <ReviewsWireframe content={wireframeReviews} />
         </SectionGroup>
 
         <SectionGroup title="Portfolio" href="/portfolio">

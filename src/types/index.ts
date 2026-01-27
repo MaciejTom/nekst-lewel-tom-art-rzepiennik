@@ -13,3 +13,4 @@ export type { ServiceEditorialContent, ServiceEditorialItem } from './service-ed
 export type { ServiceOverlayContent, ServiceOverlayItem } from './service-overlay'
 export type { PortfolioContent } from './portfolio'
 export type { ServiceIconGridContent, ServiceIconGridItem } from './service-icon-grid'
+export type { ReviewsContent, ReviewItem } from './reviews'
