@@ -2,6 +2,8 @@
  * Service Cards Types (Usługi — wariant karty z obrazem + features)
  */
 
+import type { GridCtaCard } from './common'
+
 export interface ServiceCardItem {
   title: string
   description: string
@@ -9,15 +11,9 @@ export interface ServiceCardItem {
   image?: string
 }
 
-export interface ServiceCardsCtaCard {
-  title: string
-  description?: string
-  buttonText: string
-}
-
 export interface ServiceCardsContent {
   title: string
   subtitle?: string
   services: ServiceCardItem[]
-  ctaCard?: ServiceCardsCtaCard
+  ctaCard?: GridCtaCard
 }

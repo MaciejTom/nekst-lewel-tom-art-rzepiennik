@@ -97,8 +97,30 @@ Spec opisuje mozliwe treatments.
 | CTA variant | `border border-dashed` (oba takie same) | primary solid vs outline, 3D shadow, pill, with icon |
 | Icon style | dashed box + "icon" | solid bg, outlined, ghost/transparent, naked |
 | Typography font | brak font-* (default sans) | font-display, font-serif, font-mono |
+| Grid CTA card | `bg-muted/50` + dashed border + centered text | glowing secondary, gradient glow, solid primary, subtle border |
 
 **Zasada:** Wireframe pokazuje GDZIE i CO, spec mowi JAK.
+
+### Warianty gridowe (wspolne dla sekcji z kartami)
+
+Sekcje z gridami (Overlay, Cards, Icon Grid) maja dwa wspolne warianty:
+
+1. **Dynamiczna ilosc itemow** — flex-wrap + justify-center, szerokosc kart
+   obliczana z total items (2→50%, 3/5/6→33%, 4/8→25%)
+2. **Opcjonalna karta CTA** — typ `GridCtaCard` z `common.ts`, renderowana
+   jako ostatni element w gridzie. Wireframe: bg-muted/50 + centered text.
+
+```ts
+// src/types/common.ts
+interface GridCtaCard {
+  title: string
+  description?: string
+  buttonText: string
+}
+```
+
+Kazdy typ sekcji gridowej uzywa `ctaCard?: GridCtaCard` — to jest JEDEN
+wspolny wariant, nie osobna sekcja.
 
 ### Zamienniki elementów
 
