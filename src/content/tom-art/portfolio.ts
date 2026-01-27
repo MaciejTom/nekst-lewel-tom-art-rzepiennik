@@ -1,6 +1,6 @@
 import type { PortfolioContent } from '@/types'
 
-export const demoPortfolio: PortfolioContent = {
+export const tomArtPortfolio: PortfolioContent = {
   tagline: "/ PORTFOLIO",
   title: "OUR",
   titleAccent: "WORK",

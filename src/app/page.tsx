@@ -1,58 +1,102 @@
-import { Navigation } from "@/components/sections/navigation"
-import { HeroSection } from "@/components/sections/hero-section"
-import { HeroSplit } from "@/components/sections/hero-split"
-import { WhyUsSection } from "@/components/sections/why-us-section"
-import { ServicesSection } from "@/components/sections/services-section"
-import { ForWhomSection } from "@/components/sections/for-whom-section"
-import { ProcessSection } from "@/components/sections/process-section"
+import { PortfolioWireframe } from "@/components/wireframe/portfolio-wireframe"
+import { ServicesEditorialWireframe } from "@/components/wireframe/services-editorial-wireframe"
+import { ServicesOverlayWireframe } from "@/components/wireframe/services-overlay-wireframe"
 import { PortfolioSection } from "@/components/sections/portfolio-section"
-import { FaqSection } from "@/components/sections/faq-section"
-import { ContactSection } from "@/components/sections/contact-section"
-import { Footer } from "@/components/sections/Footer"
-
-// Content
-import {
-  navigationContent,
-  heroContent,
-  heroContent2,
-  heroContent3,
-  heroSplitContent,
-  whyUsContent,
-  servicesContent,
-  forWhomContent,
-  processContent,
-  portfolioContent,
-  faqContent,
-  contactContent,
-  footerContent,
-} from "@/content/niedziela-klusek"
+import { ServicesCardsSection } from "@/components/sections/services-cards-section"
+import { ServicesEditorialSection } from "@/components/sections/services-editorial-section"
+import { ServicesOverlaySection } from "@/components/sections/services-overlay-section"
+import { wireframePortfolio } from "@/content/wireframe/portfolio"
+import { wireframeServicesEditorial } from "@/content/wireframe/services-editorial"
+import { wireframeServicesOverlay } from "@/content/wireframe/services-overlay"
+import { tomArtPortfolio } from "@/content/tom-art/portfolio"
+import { tomArtServices } from "@/content/tom-art/services"
+import { tomArtServicesEditorial } from "@/content/tom-art/services-editorial"
+import { tomArtServicesOverlay } from "@/content/tom-art/services-overlay"
 
 export default function HomePage() {
   return (
-    <>
-      <Navigation content={navigationContent} />
+    <div className="min-h-screen">
+      {/* Header */}
+      <header className="border-b border-border px-6 py-4">
+        <h1 className="text-lg font-semibold text-foreground font-mono">
+          Wireframe Templates
+        </h1>
+        <p className="text-sm text-muted-foreground font-mono">
+          Klocki do skladania stron. Wybierz layout, podmien content.
+        </p>
+      </header>
+
       <main>
-        {/* Hero 1 - Konstrukcje żelbetowe (accent na linii 1) */}
-        <HeroSection content={heroContent} />
+        {/* Services Editorial (TOM-ART) */}
+        <div className="border-b border-dashed border-border">
+          <div className="px-6 py-3 bg-muted border-b border-border">
+            <code className="text-xs text-muted-foreground">
+              ServicesEditorialSection — alternating image+text, 5 etapow, CTA, Material Symbols
+            </code>
+          </div>
+          <ServicesEditorialSection content={tomArtServicesEditorial} />
+        </div>
 
-        {/* Hero 2 - Usługi remontowe (accent na linii 0) */}
-        <HeroSection content={heroContent2} />
+        {/* Services Overlay (TOM-ART) */}
+        <div className="border-b border-dashed border-border">
+          <div className="px-6 py-3 bg-muted border-b border-border">
+            <code className="text-xs text-muted-foreground">
+              ServicesOverlaySection — overlay cards 3+2, zdjecie tlo + gradient, hover scale + line, Material Symbols
+            </code>
+          </div>
+          <ServicesOverlaySection content={tomArtServicesOverlay} />
+        </div>
 
-        {/* Hero 3 - Fotowoltaika (minimalna - bez stats) */}
-        <HeroSection content={heroContent3} />
+        {/* Services Cards (TOM-ART) */}
+        <div className="border-b border-dashed border-border">
+          <div className="px-6 py-3 bg-muted border-b border-border">
+            <code className="text-xs text-muted-foreground">
+              ServicesCardsSection — karty uslug 3+2 grid, shadow-md, h2-accent, TOM-ART content
+            </code>
+          </div>
+          <ServicesCardsSection content={tomArtServices} />
+        </div>
 
-        {/* Hero 4 - Split (Fixman - tekst + zdjęcie) */}
-        <HeroSplit content={heroSplitContent} />
+        {/* Services Editorial Wireframe */}
+        <div className="border-b border-dashed border-border">
+          <div className="px-6 py-3 bg-muted border-b border-border">
+            <code className="text-xs text-muted-foreground">
+              ServicesEditorialWireframe — alternating image+text rows, 50/50 split, step badges, neutral
+            </code>
+          </div>
+          <ServicesEditorialWireframe content={wireframeServicesEditorial} />
+        </div>
 
-        <WhyUsSection content={whyUsContent} />
-        <ServicesSection content={servicesContent} />
-        <ForWhomSection content={forWhomContent} />
-        <ProcessSection content={processContent} />
-        <PortfolioSection content={portfolioContent} />
-        <FaqSection content={faqContent} />
-        <ContactSection content={contactContent} />
+        {/* Services Overlay Wireframe */}
+        <div className="border-b border-dashed border-border">
+          <div className="px-6 py-3 bg-muted border-b border-border">
+            <code className="text-xs text-muted-foreground">
+              ServicesOverlayWireframe — overlay cards 3+2, image placeholder + content overlay, neutral
+            </code>
+          </div>
+          <ServicesOverlayWireframe content={wireframeServicesOverlay} />
+        </div>
+
+        {/* Portfolio Wireframe */}
+        <div className="border-b border-dashed border-border">
+          <div className="px-6 py-3 bg-muted border-b border-border">
+            <code className="text-xs text-muted-foreground">
+              PortfolioWireframe — grid: featured (2x2) + normal (1x1) + wide (2x1)
+            </code>
+          </div>
+          <PortfolioWireframe content={wireframePortfolio} />
+        </div>
+
+        {/* Portfolio Section (styled) */}
+        <div className="border-b border-dashed border-border">
+          <div className="px-6 py-3 bg-muted border-b border-border">
+            <code className="text-xs text-muted-foreground">
+              PortfolioSection — stylowany komponent z dekoracjami, animacjami, next/image
+            </code>
+          </div>
+          <PortfolioSection content={tomArtPortfolio} />
+        </div>
       </main>
-      <Footer content={footerContent} />
-    </>
+    </div>
   )
 }
