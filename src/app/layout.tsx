@@ -1,53 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Slab, Bebas_Neue, Work_Sans } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
-  variable: "--font-sans",
+  variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
 });
 
-const robotoSlab = Roboto_Slab({
-  variable: "--font-serif",
-  subsets: ["latin", "latin-ext"],
-});
-
-const bebasNeue = Bebas_Neue({
-  variable: "--font-display",
-  weight: "400",
-  subsets: ["latin", "latin-ext"],
-});
-
-const workSans = Work_Sans({
-  variable: "--font-work",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin", "latin-ext"],
 });
 
 export const metadata: Metadata = {
-  title: "Konstrukcje żelbetowe Tarnów | Niedziela & Kłusek",
-  description: "Roboty żelbetowe dla budownictwa przemysłowego i mieszkaniowego. Fundamenty, ściany, stropy, zbiorniki. Zespół specjalistów, 4 województwa. Wycena w 24h.",
+  title: "TOM-ART | Usługi remontowo-budowlane",
+  description: "Od ścian po podłogi — pełen zakres prac remontowych. Tynki, posadzki, malowanie, murarstwo, izolacje. Rzepiennik, Tuchów, okolice Tarnowa.",
 };
-
-// Script to prevent FOUC (Flash of Unstyled Content) when loading theme
-const themeScript = `
-  (function() {
-    try {
-      var theme = localStorage.getItem('theme');
-      var validThemes = ['minimal', 'industrial', 'sunny'];
-      if (theme && validThemes.indexOf(theme) !== -1) {
-        document.documentElement.setAttribute('data-theme', theme);
-        if (theme === 'industrial') {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      } else {
-        document.documentElement.setAttribute('data-theme', 'industrial');
-        document.documentElement.classList.add('dark');
-      }
-    } catch (e) {}
-  })();
-`;
 
 export default function RootLayout({
   children,
@@ -55,11 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl" className="dark" data-theme="industrial" suppressHydrationWarning>
+    <html lang="pl" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className={`${inter.variable} ${robotoSlab.variable} ${bebasNeue.variable} ${workSans.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

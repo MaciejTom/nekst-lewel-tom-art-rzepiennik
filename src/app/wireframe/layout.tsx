@@ -1,5 +1,3 @@
-import "./wireframe.css"
-
 export const metadata = {
   title: "Wireframe — Component Templates",
 }
