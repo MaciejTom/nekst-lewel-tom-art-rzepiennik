@@ -101,6 +101,46 @@ Spec opisuje mozliwe treatments.
 
 **Zasada:** Wireframe pokazuje GDZIE i CO, spec mowi JAK.
 
+### Regula: Struktura vs Dekoracja
+
+Wireframe = **czysta struktura**. Zero dekoracji. Agent czyta 3 zrodla:
+
+- **Wireframe** → co jest i gdzie stoi (layout, flow)
+- **Spec** → jak to ostylowac (dekoracje, efekty)
+- **Content type** → jakie dane wypelniaja sloty
+
+#### Co jest DEKORACJA (NIE pokazujemy w wireframe):
+
+1. **Elementy `position: absolute` / `fixed`** ktore nie wplywaja na flow layoutu
+   — np. ikona cudzysłowu w rogu karty, dekoracyjny kształt w tle, gradient overlay na obrazku
+2. **Transformacje wizualne** — `scale-*`, `rotate-*`, `-skew-*`
+   — np. powiekszona srodkowa karta (`scale-105`)
+3. **Efekty wizualne** — `shadow-*`, `ring-*`, `backdrop-blur-*`, `opacity-*`
+4. **Ikony dekoracyjne** — `format_quote`, dekoracyjne strzalki, separatory graficzne
+5. **Gradienty overlay** — `bg-gradient-to-t from-black/60 to-transparent`
+6. **Floating badges na obrazkach** — jesli sa absolute i dekoracyjne (cytat + gwiazdki na zdjęciu)
+
+#### Co jest STRUKTURA (POKAZUJEMY w wireframe):
+
+1. **Grid/flex layout** — ile kolumn, gap, breakpointy
+2. **Elementy content-driven** — rating (z `rating: number`), tekst, lista features
+3. **Placeholdery na content** — obrazy (ImageIcon), ikony (dashed box), avatary (CircleDashed)
+4. **Flagi w typie** — `featured: boolean` JEST w typie (dane), ale SPOSOB wyroznienia to dekoracja
+   → wireframe nie zmienia wygladu karty, spec opisuje jak wyroznic featured
+
+#### Jak oznaczyc flagi typu w wireframe:
+
+Jesli typ ma flage (np. `featured: boolean`), wireframe NIE zmienia wygladu elementu.
+Zamiast tego dodaje maly label:
+
+```tsx
+{item.featured && (
+  <span className="text-[10px] text-muted-foreground/50 uppercase tracking-widest">[featured]</span>
+)}
+```
+
+Agent stylujacy czyta flage z typu i spec, zeby wiedziec jak ja wyrenderowac.
+
 ### Warianty gridowe (wspolne dla sekcji z kartami)
 
 Sekcje z gridami (Overlay, Cards, Icon Grid) maja dwa wspolne warianty:

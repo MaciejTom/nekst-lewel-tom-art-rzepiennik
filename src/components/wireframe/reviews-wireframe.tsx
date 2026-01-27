@@ -1,4 +1,4 @@
-import { Star, Quote, CircleDashed } from "lucide-react"
+import { Star, CircleDashed } from "lucide-react"
 import type { ReviewsContent } from "@/types"
 
 const w = {
@@ -12,13 +12,8 @@ const w = {
   // Grid
   grid: "grid md:grid-cols-3 gap-8",
 
-  // Card
-  card: "border border-dashed border-border p-8 relative",
-  cardFeatured:
-    "border-2 border-dashed border-foreground p-8 relative scale-105 z-10",
-
-  // Quote icon
-  quoteIcon: "absolute top-6 right-6 w-8 h-8 text-muted-foreground/20",
+  // Card (same for all — featured styling is decoration, described in spec)
+  card: "border border-dashed border-border p-8",
 
   // Stars
   starsRow: "flex gap-1 mb-4",
@@ -35,9 +30,12 @@ const w = {
   authorName: "text-sm font-semibold text-foreground",
   authorLabel: "text-xs text-muted-foreground",
 
+  // Featured label
+  featuredLabel:
+    "text-[10px] text-muted-foreground/50 uppercase tracking-widest mb-2",
+
   // Bottom link
-  bottomLink:
-    "flex justify-center mt-10",
+  bottomLink: "flex justify-center mt-10",
   link: "inline-block border-b border-dashed border-border text-sm text-muted-foreground uppercase tracking-widest pb-1",
 }
 
@@ -57,12 +55,11 @@ export function ReviewsWireframe({ content }: Props) {
         {/* Cards */}
         <div className={w.grid}>
           {reviews.map((review, i) => (
-            <div
-              key={i}
-              className={review.featured ? w.cardFeatured : w.card}
-            >
-              {/* Quote icon */}
-              <Quote className={w.quoteIcon} />
+            <div key={i} className={w.card}>
+              {/* Featured label (styling is decoration — see spec) */}
+              {review.featured && (
+                <span className={w.featuredLabel}>[featured]</span>
+              )}
 
               {/* Stars */}
               <div className={w.starsRow}>
