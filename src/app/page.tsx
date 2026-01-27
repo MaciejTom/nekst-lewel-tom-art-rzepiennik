@@ -1,22 +1,34 @@
 import { SectionGroup, ComponentLabel } from "@/components/showcase/layout"
+
+// Styled (originals)
+import { ServicesEditorialSection } from "@/components/sections/services-editorial-section"
+import { ServicesOverlaySection } from "@/components/sections/services-overlay-section"
+import { ServicesCardsSection } from "@/components/sections/services-cards-section"
+import { PortfolioSection } from "@/components/sections/portfolio-section"
+import { tomArtServicesEditorial } from "@/content/tom-art/services-editorial"
+import { tomArtServicesOverlay } from "@/content/tom-art/services-overlay"
+import { tomArtServices } from "@/content/tom-art/services"
+import { tomArtPortfolio } from "@/content/tom-art/portfolio"
+
+// Wireframes
 import { HeroWireframe } from "@/components/wireframe/hero-wireframe"
-import { PortfolioWireframe } from "@/components/wireframe/portfolio-wireframe"
+import { HeroSplitWireframe } from "@/components/wireframe/hero-split-wireframe"
 import { ServicesEditorialWireframe } from "@/components/wireframe/services-editorial-wireframe"
-import { ServicesIconGridWireframe } from "@/components/wireframe/services-icon-grid-wireframe"
 import { ServicesOverlayWireframe } from "@/components/wireframe/services-overlay-wireframe"
 import { ServicesCardsWireframe } from "@/components/wireframe/services-cards-wireframe"
-import { ReviewsWireframe } from "@/components/wireframe/reviews-wireframe"
+import { ServicesIconGridWireframe } from "@/components/wireframe/services-icon-grid-wireframe"
 import { FeaturesSplitWireframe } from "@/components/wireframe/features-split-wireframe"
-import { HeroSplitWireframe } from "@/components/wireframe/hero-split-wireframe"
+import { ReviewsWireframe } from "@/components/wireframe/reviews-wireframe"
+import { PortfolioWireframe } from "@/components/wireframe/portfolio-wireframe"
 import { wireframeHero } from "@/content/wireframe/hero"
-import { wireframePortfolio } from "@/content/wireframe/portfolio"
+import { wireframeHeroSplit } from "@/content/wireframe/hero-split"
 import { wireframeServicesEditorial } from "@/content/wireframe/services-editorial"
-import { wireframeServicesIconGrid } from "@/content/wireframe/services-icon-grid"
 import { wireframeServicesOverlay } from "@/content/wireframe/services-overlay"
 import { wireframeServicesCards } from "@/content/wireframe/services-cards"
-import { wireframeReviews } from "@/content/wireframe/reviews"
+import { wireframeServicesIconGrid } from "@/content/wireframe/services-icon-grid"
 import { wireframeFeaturesSplit } from "@/content/wireframe/features-split"
-import { wireframeHeroSplit } from "@/content/wireframe/hero-split"
+import { wireframeReviews } from "@/content/wireframe/reviews"
+import { wireframePortfolio } from "@/content/wireframe/portfolio"
 
 export default function HomePage() {
   return (
@@ -31,6 +43,30 @@ export default function HomePage() {
       </header>
 
       <main>
+        {/* ── STYLED (originals) ─────────────────────────── */}
+
+        <SectionGroup title="Services Editorial — Styled" href="/services-editorial">
+          <ComponentLabel label="ServicesEditorialSection — serif, Material Symbols, dekoracyjne ramki" variant="styled" />
+          <ServicesEditorialSection content={tomArtServicesEditorial} />
+        </SectionGroup>
+
+        <SectionGroup title="Services Overlay — Styled" href="/services-overlay">
+          <ComponentLabel label="ServicesOverlaySection — gradient, hover scale, expanding line" variant="styled" />
+          <ServicesOverlaySection content={tomArtServicesOverlay} />
+        </SectionGroup>
+
+        <SectionGroup title="Services Cards — Styled" href="/services-cards">
+          <ComponentLabel label="ServicesCardsSection — serif, shadow-md, h2-accent" variant="styled" />
+          <ServicesCardsSection content={tomArtServices} />
+        </SectionGroup>
+
+        <SectionGroup title="Portfolio — Styled" href="/portfolio">
+          <ComponentLabel label="PortfolioSection — framer-motion, corner accents" variant="styled" />
+          <PortfolioSection content={tomArtPortfolio} />
+        </SectionGroup>
+
+        {/* ── WIREFRAMES ─────────────────────────────────── */}
+
         <SectionGroup title="Hero Full-screen" href="/hero">
           <ComponentLabel label="Full-screen, badge + headline + CTA + stats + scroll" variant="wireframe" />
           <HeroWireframe content={wireframeHero} />
