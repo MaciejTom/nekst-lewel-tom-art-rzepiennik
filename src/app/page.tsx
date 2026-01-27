@@ -1,3 +1,4 @@
+import { HeroWireframe } from "@/components/wireframe/hero-wireframe"
 import { PortfolioWireframe } from "@/components/wireframe/portfolio-wireframe"
 import { ServicesEditorialWireframe } from "@/components/wireframe/services-editorial-wireframe"
 import { ServicesOverlayWireframe } from "@/components/wireframe/services-overlay-wireframe"
@@ -5,6 +6,7 @@ import { PortfolioSection } from "@/components/sections/portfolio-section"
 import { ServicesCardsSection } from "@/components/sections/services-cards-section"
 import { ServicesEditorialSection } from "@/components/sections/services-editorial-section"
 import { ServicesOverlaySection } from "@/components/sections/services-overlay-section"
+import { wireframeHero } from "@/content/wireframe/hero"
 import { wireframePortfolio } from "@/content/wireframe/portfolio"
 import { wireframeServicesEditorial } from "@/content/wireframe/services-editorial"
 import { wireframeServicesOverlay } from "@/content/wireframe/services-overlay"
@@ -12,6 +14,32 @@ import { tomArtPortfolio } from "@/content/tom-art/portfolio"
 import { tomArtServices } from "@/content/tom-art/services"
 import { tomArtServicesEditorial } from "@/content/tom-art/services-editorial"
 import { tomArtServicesOverlay } from "@/content/tom-art/services-overlay"
+
+function SectionGroup({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="border-b-4 border-border">
+      <div className="px-6 py-4 bg-foreground text-background">
+        <h2 className="text-sm font-bold font-mono uppercase tracking-widest">{title}</h2>
+      </div>
+      {children}
+    </div>
+  )
+}
+
+function ComponentLabel({ label, variant }: { label: string; variant: "wireframe" | "styled" }) {
+  return (
+    <div className="px-6 py-2 bg-muted border-b border-border flex items-center gap-3">
+      <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 border ${
+        variant === "wireframe"
+          ? "border-border text-muted-foreground"
+          : "border-foreground text-foreground"
+      }`}>
+        {variant}
+      </span>
+      <code className="text-xs text-muted-foreground">{label}</code>
+    </div>
+  )
+}
 
 export default function HomePage() {
   return (
@@ -27,75 +55,57 @@ export default function HomePage() {
       </header>
 
       <main>
-        {/* Services Editorial (TOM-ART) */}
-        <div className="border-b border-dashed border-border">
-          <div className="px-6 py-3 bg-muted border-b border-border">
-            <code className="text-xs text-muted-foreground">
-              ServicesEditorialSection — alternating image+text, 5 etapow, CTA, Material Symbols
-            </code>
+        {/* ── HERO ── */}
+        <SectionGroup title="Hero">
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="HeroWireframe — full-screen, badge + 3-line headline + CTA + stats + scroll" variant="wireframe" />
+            <HeroWireframe content={wireframeHero} />
           </div>
-          <ServicesEditorialSection content={tomArtServicesEditorial} />
-        </div>
+        </SectionGroup>
 
-        {/* Services Overlay (TOM-ART) */}
-        <div className="border-b border-dashed border-border">
-          <div className="px-6 py-3 bg-muted border-b border-border">
-            <code className="text-xs text-muted-foreground">
-              ServicesOverlaySection — overlay cards 3+2, zdjecie tlo + gradient, hover scale + line, Material Symbols
-            </code>
+        {/* ── SERVICES EDITORIAL ── */}
+        <SectionGroup title="Services Editorial">
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="ServicesEditorialWireframe — alternating image+text rows, step badges" variant="wireframe" />
+            <ServicesEditorialWireframe content={wireframeServicesEditorial} />
           </div>
-          <ServicesOverlaySection content={tomArtServicesOverlay} />
-        </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="ServicesEditorialSection — serif, Material Symbols, dekoracyjne ramki" variant="styled" />
+            <ServicesEditorialSection content={tomArtServicesEditorial} />
+          </div>
+        </SectionGroup>
 
-        {/* Services Cards (TOM-ART) */}
-        <div className="border-b border-dashed border-border">
-          <div className="px-6 py-3 bg-muted border-b border-border">
-            <code className="text-xs text-muted-foreground">
-              ServicesCardsSection — karty uslug 3+2 grid, shadow-md, h2-accent, TOM-ART content
-            </code>
+        {/* ── SERVICES OVERLAY ── */}
+        <SectionGroup title="Services Overlay">
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="ServicesOverlayWireframe — overlay cards 3+2, placeholders" variant="wireframe" />
+            <ServicesOverlayWireframe content={wireframeServicesOverlay} />
           </div>
-          <ServicesCardsSection content={tomArtServices} />
-        </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="ServicesOverlaySection — gradient, hover scale, expanding line" variant="styled" />
+            <ServicesOverlaySection content={tomArtServicesOverlay} />
+          </div>
+        </SectionGroup>
 
-        {/* Services Editorial Wireframe */}
-        <div className="border-b border-dashed border-border">
-          <div className="px-6 py-3 bg-muted border-b border-border">
-            <code className="text-xs text-muted-foreground">
-              ServicesEditorialWireframe — alternating image+text rows, 50/50 split, step badges, neutral
-            </code>
+        {/* ── SERVICES CARDS ── */}
+        <SectionGroup title="Services Cards">
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="ServicesCardsSection — karty 3+2 grid, shadow-md" variant="styled" />
+            <ServicesCardsSection content={tomArtServices} />
           </div>
-          <ServicesEditorialWireframe content={wireframeServicesEditorial} />
-        </div>
+        </SectionGroup>
 
-        {/* Services Overlay Wireframe */}
-        <div className="border-b border-dashed border-border">
-          <div className="px-6 py-3 bg-muted border-b border-border">
-            <code className="text-xs text-muted-foreground">
-              ServicesOverlayWireframe — overlay cards 3+2, image placeholder + content overlay, neutral
-            </code>
+        {/* ── PORTFOLIO ── */}
+        <SectionGroup title="Portfolio">
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="PortfolioWireframe — mosaic grid: featured (2x2) + normal (1x1) + wide (2x1)" variant="wireframe" />
+            <PortfolioWireframe content={wireframePortfolio} />
           </div>
-          <ServicesOverlayWireframe content={wireframeServicesOverlay} />
-        </div>
-
-        {/* Portfolio Wireframe */}
-        <div className="border-b border-dashed border-border">
-          <div className="px-6 py-3 bg-muted border-b border-border">
-            <code className="text-xs text-muted-foreground">
-              PortfolioWireframe — grid: featured (2x2) + normal (1x1) + wide (2x1)
-            </code>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="PortfolioSection — framer-motion, corner accents, next/image" variant="styled" />
+            <PortfolioSection content={tomArtPortfolio} />
           </div>
-          <PortfolioWireframe content={wireframePortfolio} />
-        </div>
-
-        {/* Portfolio Section (styled) */}
-        <div className="border-b border-dashed border-border">
-          <div className="px-6 py-3 bg-muted border-b border-border">
-            <code className="text-xs text-muted-foreground">
-              PortfolioSection — stylowany komponent z dekoracjami, animacjami, next/image
-            </code>
-          </div>
-          <PortfolioSection content={tomArtPortfolio} />
-        </div>
+        </SectionGroup>
       </main>
     </div>
   )

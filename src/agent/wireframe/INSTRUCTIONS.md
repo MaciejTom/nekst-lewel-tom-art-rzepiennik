@@ -16,6 +16,8 @@ HTML prototype (Stitch)
    [3] STYLING — wireframe + content.md + globals.css + spec → produkcyjny komponent
 ```
 
+**WAZNE:** Po kazdej zmianie (nowy wireframe, nowy styled, nowy spec) zaktualizuj `src/agent/wireframe/SECTIONS.md`.
+
 ---
 
 ## Faza 1: HTML → Wireframe
@@ -79,6 +81,24 @@ export function NameWireframe({ content }: Props) {
 - `backdrop-blur-*`, gradienty
 - `rounded-xl`, `rounded-full` (zaokrąglenia dekoracyjne)
 - `cursor-pointer`
+
+### Wlasciwosci dekoracji (decoration properties)
+
+Niektore elementy WYGLADAJA strukturalnie, ale sa decyzjami dekoracyjnymi.
+Wireframe je ZAZNACZA (pokazuje ze cos tu bedzie), ale NIE DEFINIUJE jak.
+Spec opisuje mozliwe treatments.
+
+| Element w wireframe | Jak zaznaczony | Mozliwe treatments (w spec) |
+|---------------------|----------------|-----------------------------|
+| Headline accent line | `border-b-2 border-dashed text-muted-foreground` | inny kolor, inny font, underline, bg highlight, gradient text, brak |
+| Badge | `border border-dashed` | border-accent, solid bg, dot+text, rounded |
+| Stat value | `text-foreground font-semibold` | text-primary, font-display, font-mono |
+| Background image | `bg-muted` + ImageIcon | real image + gradient overlay + pattern |
+| CTA variant | `border border-dashed` (oba takie same) | primary solid vs outline, 3D shadow, pill, with icon |
+| Icon style | dashed box + "icon" | solid bg, outlined, ghost/transparent, naked |
+| Typography font | brak font-* (default sans) | font-display, font-serif, font-mono |
+
+**Zasada:** Wireframe pokazuje GDZIE i CO, spec mowi JAK.
 
 ### Zamienniki elementów
 
@@ -252,6 +272,7 @@ src/content/{client}/{name}.ts              — content klienta
 
 | Oryginał | Layout | Plik |
 |----------|--------|------|
+| Hero Fullscreen | Full-screen hero, badge + headline + CTA + stats + scroll | `src/agent/wireframe/originals/hero-fullscreen.tsx` |
 | Overlay Cards | Tall cards z image bg, gradient, hover | `src/agent/wireframe/originals/overlay-cards.html` |
 | Editorial Alternating | Alternating image+text rows z step badges | `src/agent/wireframe/originals/editorial-alternating.html` |
 
@@ -261,6 +282,7 @@ Każdy oryginał ma komentarz na górze wskazujący powiązany wireframe i spec.
 
 | Wireframe | Layout | Plik |
 |-----------|--------|------|
+| HeroWireframe | Full-screen, badge + 3-line headline + CTA + stats + scroll indicator | `src/components/wireframe/hero-wireframe.tsx` |
 | PortfolioWireframe | Mosaic grid (featured 2x2 + normal 1x1 + wide 2x1) | `src/components/wireframe/portfolio-wireframe.tsx` |
 | ServicesOverlayWireframe | Overlay cards flex-wrap 3+2, image bg + content overlay | `src/components/wireframe/services-overlay-wireframe.tsx` |
 | ServicesEditorialWireframe | Alternating 50/50 image+text rows, step badges | `src/components/wireframe/services-editorial-wireframe.tsx` |
@@ -269,5 +291,6 @@ Każdy oryginał ma komentarz na górze wskazujący powiązany wireframe i spec.
 
 | Spec | Layout | Plik |
 |------|--------|------|
+| Hero Fullscreen | Full-screen hero, rebar pattern, geometric decorations, stagger animations | `src/agent/wireframe/specs/hero-fullscreen.md` |
 | Overlay Cards | Tall cards with image bg, gradient, hover effects | `src/agent/wireframe/specs/overlay-cards.md` |
 | Editorial Alternating | Alternating image+text rows with decorative borders | `src/agent/wireframe/specs/editorial-alternating.md` |
