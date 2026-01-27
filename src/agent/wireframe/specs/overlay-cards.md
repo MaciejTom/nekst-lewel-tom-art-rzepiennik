@@ -89,6 +89,33 @@ CTA na końcu — prosty tekst + button.
 - Button transition: `transition-all duration-300`
 - Button icon: Material Symbol (filled) `text-[24px]`
 
+### CTA Card (optional, in-grid)
+- **Wireframe:** bg-muted/50, dashed border, centered text + button placeholder
+- **To jest dodatkowa karta w gridzie (nie na dole), sluzy jako CTA / upsell.**
+- Styled options:
+  - Glowing secondary: `bg-secondary shadow-[0_0_60px_-12px_var(--secondary)] text-secondary-foreground`
+  - Gradient glow: `bg-gradient-to-br from-secondary via-secondary/90 to-primary/20 shadow-2xl`
+  - Solid primary: `bg-primary text-primary-foreground shadow-lg`
+  - Subtle: `bg-card border-2 border-primary/20`
+- Button: same treatments as CTA buttons (solid, pill, outline)
+- Content: title + optional description + button
+
+---
+
+## Item Count Behavior
+
+Grid uzywa `flex flex-wrap justify-center` z dynamiczna szerokoscia kart:
+- Jesli total (services + ctaCard) = 2 lub 4: karty 50% (2 per row)
+- W przeciwnym razie: karty 33% (3 per row)
+
+Przykladowe uklady:
+- 3 items → 3 in a row (33%)
+- 4 items → 2+2 (50%)
+- 5 items → 3+2 centered (33%)
+- 6 items → 3+3 (33%)
+- 3 items + CTA card → 2+2 (50%, total=4)
+- 5 items + CTA card → 3+3 (33%, total=6)
+
 ---
 
 ## Hover Effects Summary

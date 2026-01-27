@@ -13,11 +13,14 @@ const w = {
   titleUnderline: "block w-16 h-px bg-border mx-auto mt-4",
   subtitle: "text-muted-foreground text-lg leading-relaxed mt-6 max-w-2xl mx-auto",
 
-  // Grid — flex-wrap: 3 cols lg, 2 md, 1 mobile
+  // Grid — flex-wrap with justify-center for auto-centering last row
   grid: "flex flex-wrap justify-center gap-6",
 
-  // Card — tall overlay card
-  card: "relative w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] h-[500px] border border-dashed border-border overflow-hidden",
+  // Card base (height + border + overflow)
+  cardBase: "relative h-[500px] border border-dashed border-border overflow-hidden",
+  // Width variants
+  cardW3: "w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]",
+  cardW2: "w-full md:w-[calc(50%-0.75rem)]",
 
   // Image placeholder (full card background)
   placeholder: "w-full h-full bg-muted flex flex-col items-center justify-center gap-2",
@@ -43,7 +46,14 @@ const w = {
   // Structural line (represents decorative element)
   cardLine: "w-12 h-px bg-border mt-4",
 
-  // CTA
+  // CTA Card (in-grid) — same size as service card, different content
+  ctaCardBase: "relative h-[500px] border border-dashed border-border overflow-hidden flex flex-col items-center justify-center text-center p-8 bg-muted/50",
+  ctaCardLabel: "text-[10px] text-muted-foreground/50 uppercase tracking-widest mb-4",
+  ctaCardTitle: "text-xl font-semibold text-foreground mb-3",
+  ctaCardDesc: "text-sm text-muted-foreground mb-6 max-w-xs",
+  ctaCardButton: "inline-block border border-dashed border-border px-8 py-4 text-sm text-muted-foreground uppercase tracking-widest",
+
+  // CTA (bottom section)
   cta: "mt-16 text-center",
   ctaText: "text-muted-foreground mb-4",
   ctaButton: "inline-block border border-dashed border-border px-8 py-4 text-sm text-muted-foreground uppercase tracking-widest",
@@ -54,7 +64,12 @@ interface ServicesOverlayWireframeProps {
 }
 
 export function ServicesOverlayWireframe({ content }: ServicesOverlayWireframeProps) {
-  const { title, titleBreak, subtitle, services, cta } = content
+  const { title, titleBreak, subtitle, services, ctaCard, cta } = content
+
+  // Total grid items (services + optional CTA card)
+  const total = services.length + (ctaCard ? 1 : 0)
+  // Use 2-col layout when total is 2 or 4, 3-col otherwise
+  const widthClass = total === 2 || total === 4 ? w.cardW2 : w.cardW3
 
   return (
     <section className={w.section}>
@@ -72,7 +87,7 @@ export function ServicesOverlayWireframe({ content }: ServicesOverlayWireframePr
         {/* Cards */}
         <div className={w.grid}>
           {services.map((service, index) => (
-            <div key={index} className={w.card}>
+            <div key={index} className={`${w.cardBase} ${widthClass}`}>
               {/* Image placeholder */}
               <div className={w.placeholder}>
                 <ImageIcon className={w.placeholderIcon} />
@@ -103,9 +118,21 @@ export function ServicesOverlayWireframe({ content }: ServicesOverlayWireframePr
               </div>
             </div>
           ))}
+
+          {/* CTA Card (optional, in-grid) */}
+          {ctaCard && (
+            <div className={`${w.ctaCardBase} ${widthClass}`}>
+              <span className={w.ctaCardLabel}>cta card</span>
+              <h3 className={w.ctaCardTitle}>{ctaCard.title}</h3>
+              {ctaCard.description && (
+                <p className={w.ctaCardDesc}>{ctaCard.description}</p>
+              )}
+              <span className={w.ctaCardButton}>{ctaCard.buttonText}</span>
+            </div>
+          )}
         </div>
 
-        {/* CTA */}
+        {/* CTA (bottom) */}
         {cta && (
           <div className={w.cta}>
             <p className={w.ctaText}>{cta.text}</p>

@@ -11,11 +11,18 @@ export interface ServiceOverlayItem {
   imageAlt: string
 }
 
+export interface ServiceOverlayCtaCard {
+  title: string
+  description?: string
+  buttonText: string
+}
+
 export interface ServiceOverlayContent {
   title: string
   titleBreak?: string
   subtitle: string
   services: ServiceOverlayItem[]
+  ctaCard?: ServiceOverlayCtaCard
   cta?: {
     text: string
     buttonText: string

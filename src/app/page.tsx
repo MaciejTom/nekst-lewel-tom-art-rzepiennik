@@ -1,6 +1,7 @@
 import { HeroWireframe } from "@/components/wireframe/hero-wireframe"
 import { PortfolioWireframe } from "@/components/wireframe/portfolio-wireframe"
 import { ServicesEditorialWireframe } from "@/components/wireframe/services-editorial-wireframe"
+import { ServicesIconGridWireframe } from "@/components/wireframe/services-icon-grid-wireframe"
 import { ServicesOverlayWireframe } from "@/components/wireframe/services-overlay-wireframe"
 import { PortfolioSection } from "@/components/sections/portfolio-section"
 import { ServicesCardsSection } from "@/components/sections/services-cards-section"
@@ -9,7 +10,14 @@ import { ServicesOverlaySection } from "@/components/sections/services-overlay-s
 import { wireframeHero } from "@/content/wireframe/hero"
 import { wireframePortfolio } from "@/content/wireframe/portfolio"
 import { wireframeServicesEditorial } from "@/content/wireframe/services-editorial"
-import { wireframeServicesOverlay } from "@/content/wireframe/services-overlay"
+import { wireframeServicesIconGrid } from "@/content/wireframe/services-icon-grid"
+import {
+  wireframeServicesOverlay,
+  wireframeOverlay4,
+  wireframeOverlay3,
+  wireframeOverlay3Cta,
+  wireframeOverlay5Cta,
+} from "@/content/wireframe/services-overlay"
 import { tomArtPortfolio } from "@/content/tom-art/portfolio"
 import { tomArtServices } from "@/content/tom-art/services"
 import { tomArtServicesEditorial } from "@/content/tom-art/services-editorial"
@@ -78,11 +86,27 @@ export default function HomePage() {
         {/* ── SERVICES OVERLAY ── */}
         <SectionGroup title="Services Overlay">
           <div className="border-b border-dashed border-border">
-            <ComponentLabel label="ServicesOverlayWireframe — overlay cards 3+2, placeholders" variant="wireframe" />
+            <ComponentLabel label="5 items → 3+2 centered" variant="wireframe" />
             <ServicesOverlayWireframe content={wireframeServicesOverlay} />
           </div>
           <div className="border-b border-dashed border-border">
-            <ComponentLabel label="ServicesOverlaySection — gradient, hover scale, expanding line" variant="styled" />
+            <ComponentLabel label="4 items → 2+2" variant="wireframe" />
+            <ServicesOverlayWireframe content={wireframeOverlay4} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="3 items → 3 in a row" variant="wireframe" />
+            <ServicesOverlayWireframe content={wireframeOverlay3} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="3 items + CTA card → 3+1 centered" variant="wireframe" />
+            <ServicesOverlayWireframe content={wireframeOverlay3Cta} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="5 items + CTA card → 3+3" variant="wireframe" />
+            <ServicesOverlayWireframe content={wireframeOverlay5Cta} />
+          </div>
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="ServicesOverlaySection — styled, gradient, hover scale" variant="styled" />
             <ServicesOverlaySection content={tomArtServicesOverlay} />
           </div>
         </SectionGroup>
@@ -92,6 +116,14 @@ export default function HomePage() {
           <div className="border-b border-dashed border-border">
             <ComponentLabel label="ServicesCardsSection — karty 3+2 grid, shadow-md" variant="styled" />
             <ServicesCardsSection content={tomArtServices} />
+          </div>
+        </SectionGroup>
+
+        {/* ── SERVICES ICON GRID ── */}
+        <SectionGroup title="Services Icon Grid">
+          <div className="border-b border-dashed border-border">
+            <ComponentLabel label="ServicesIconGridWireframe — centered header + 4-col icon cards, no images" variant="wireframe" />
+            <ServicesIconGridWireframe content={wireframeServicesIconGrid} />
           </div>
         </SectionGroup>
 
