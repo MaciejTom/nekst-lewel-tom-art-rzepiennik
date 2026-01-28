@@ -339,6 +339,15 @@ src/content/{client}/{name}.ts              — content klienta
 | Editorial Alternating | Alternating image+text rows z step badges | `src/agent/wireframe/originals/editorial-alternating.html` |
 | Services Icon Grid | Centered header + 4-col icon cards, no images | `src/agent/wireframe/originals/services-icon-grid.html` |
 | Services Cards | Image cards + features list, left-aligned header | `src/agent/wireframe/originals/services-cards.tsx` |
+| Nav | Fixed navbar, glassmorphism pill, logo + links + CTA | `src/agent/wireframe/originals/nav.html` |
+| Footer | 4-col multi-column: brand + contact + links + utility + copyright | `src/agent/wireframe/originals/footer.html` |
+| Contact | 2-col: info/image left + form right | `src/agent/wireframe/originals/contact.html` |
+| CTA Banner | Full-width centered: icon + headline + subtitle + 2 buttons | `src/agent/wireframe/originals/cta-banner.html` |
+| FAQ | Accordion with details/summary, rotate icon | `src/agent/wireframe/originals/faq.html` |
+| Pricing | 2-col: standard + popular tier with features checklist | `src/agent/wireframe/originals/pricing.html` |
+| Process | 4 vertical step cards: badge + title + description | `src/agent/wireframe/originals/process.html` |
+| Stats | 4-col grid: icon + big number + label, centered | `src/agent/wireframe/originals/stats.html` |
+| Logos | 6-col grid with borders, logo placeholders | `src/agent/wireframe/originals/logos.html` |
 
 Każdy oryginał ma komentarz na górze wskazujący powiązany wireframe i spec.
 
@@ -347,18 +356,42 @@ Każdy oryginał ma komentarz na górze wskazujący powiązany wireframe i spec.
 | Wireframe | Layout | Plik |
 |-----------|--------|------|
 | HeroWireframe | Full-screen, badge + 3-line headline + CTA + stats + scroll indicator | `src/components/wireframe/hero-wireframe.tsx` |
+| HeroSplitWireframe | 2-col grid: content left + image right with overlay badge | `src/components/wireframe/hero-split-wireframe.tsx` |
 | PortfolioWireframe | Mosaic grid (featured 2x2 + normal 1x1 + wide 2x1) | `src/components/wireframe/portfolio-wireframe.tsx` |
 | ServicesOverlayWireframe | Overlay cards flex-wrap 3+2, image bg + content overlay | `src/components/wireframe/services-overlay-wireframe.tsx` |
 | ServicesEditorialWireframe | Alternating 50/50 image+text rows, step badges | `src/components/wireframe/services-editorial-wireframe.tsx` |
 | ServicesIconGridWireframe | Centered header + 4-col icon cards, no images | `src/components/wireframe/services-icon-grid-wireframe.tsx` |
 | ServicesCardsWireframe | Image cards + features list, flex-wrap dynamic grid + CTA card | `src/components/wireframe/services-cards-wireframe.tsx` |
+| ReviewsWireframe | 3-col grid: stars + quote + author, featured label | `src/components/wireframe/reviews-wireframe.tsx` |
+| FeaturesSplitWireframe | 2-col: content left (features checklist) + image right | `src/components/wireframe/features-split-wireframe.tsx` |
+| NavWireframe | Fixed navbar: logo + centered links pill + CTA + mobile menu | `src/components/wireframe/nav-wireframe.tsx` |
+| FooterWireframe | CTA row + 4-col grid (brand, contact, links) + copyright | `src/components/wireframe/footer-wireframe.tsx` |
+| ContactWireframe | 2-col: info/image left + form right | `src/components/wireframe/contact-wireframe.tsx` |
+| CtaBannerWireframe | Centered: icon + headline + subtitle + 2 buttons | `src/components/wireframe/cta-banner-wireframe.tsx` |
+| FaqWireframe | Centered title + accordion items (all expanded) | `src/components/wireframe/faq-wireframe.tsx` |
+| PricingWireframe | 2-col: standard + featured tier with features checklist | `src/components/wireframe/pricing-wireframe.tsx` |
+| ProcessWireframe | Vertical step cards: badge + title + description | `src/components/wireframe/process-wireframe.tsx` |
+| StatsWireframe | 4-col grid: icon + value + label, centered, dividers | `src/components/wireframe/stats-wireframe.tsx` |
+| LogosWireframe | 6-col grid: logo placeholders in bordered cells | `src/components/wireframe/logos-wireframe.tsx` |
 
 ## Referencja: istniejące specs
 
 | Spec | Layout | Plik |
 |------|--------|------|
 | Hero Fullscreen | Full-screen hero, rebar pattern, geometric decorations, stagger animations | `src/agent/wireframe/specs/hero-fullscreen.md` |
+| Hero Split | 2-col split, gradient overlay on image, floating badge | `src/agent/wireframe/specs/hero-split.md` |
 | Overlay Cards | Tall cards with image bg, gradient, hover effects | `src/agent/wireframe/specs/overlay-cards.md` |
 | Editorial Alternating | Alternating image+text rows with decorative borders | `src/agent/wireframe/specs/editorial-alternating.md` |
 | Services Icon Grid | Centered header + 4-col icon cards, dark theme, hover invert | `src/agent/wireframe/specs/services-icon-grid.md` |
 | Services Cards | Image cards + features, font-serif, shadow-md, h2-accent | `src/agent/wireframe/specs/services-cards.md` |
+| Reviews | 3-col testimonial grid, quote icon, scale featured | `src/agent/wireframe/specs/reviews.md` |
+| Features Split | 2-col, gradient overlay on image, floating quote badge | `src/agent/wireframe/specs/features-split.md` |
+| Nav | Glassmorphism pill, rounded-pill shape, backdrop-blur | `src/agent/wireframe/specs/nav.md` |
+| Footer | Dark bg, CTA row, social links, contact info | `src/agent/wireframe/specs/footer.md` |
+| Contact | Brand bg, form with shadow, grayscale image | `src/agent/wireframe/specs/contact.md` |
+| CTA Banner | Dark bg, radial gradient decoration, serif font, rounded buttons | `src/agent/wireframe/specs/cta-banner.md` |
+| FAQ | Bold title, details/summary accordion, rotate-45 icon | `src/agent/wireframe/specs/faq.md` |
+| Pricing | 2-col light/dark, POPULAR badge, check icons, rounded-3xl | `src/agent/wireframe/specs/pricing.md` |
+| Process | Semi-transparent cards, rounded-2xl, pill badges | `src/agent/wireframe/specs/process.md` |
+| Stats | Dark bg, dot pattern, Material icons, accent colors | `src/agent/wireframe/specs/stats.md` |
+| Logos | Bordered grid, opacity logos, dark:invert | `src/agent/wireframe/specs/logos.md` |

@@ -6,8 +6,8 @@ export const wireframeHero: HeroContent = {
   headlineAccent: "Keyword",
   subtitle:
     "Short description of this section, its value proposition and what the visitor should expect to find.",
-  ctaPrimary: { text: "Primary Action" },
-  ctaSecondary: { text: "Secondary Action" },
+  ctaPrimary: { text: "Start Now" },
+  ctaSecondary: { text: "Watch Demo" },
   stats: [
     { value: "00+", label: "Stat Label One" },
     { value: "00h", label: "Stat Label Two" },

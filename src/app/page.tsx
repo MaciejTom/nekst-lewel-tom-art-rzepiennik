@@ -20,6 +20,15 @@ import { ServicesIconGridWireframe } from "@/components/wireframe/services-icon-
 import { FeaturesSplitWireframe } from "@/components/wireframe/features-split-wireframe"
 import { ReviewsWireframe } from "@/components/wireframe/reviews-wireframe"
 import { PortfolioWireframe } from "@/components/wireframe/portfolio-wireframe"
+import { NavWireframe } from "@/components/wireframe/nav-wireframe"
+import { FooterWireframe } from "@/components/wireframe/footer-wireframe"
+import { ContactWireframe } from "@/components/wireframe/contact-wireframe"
+import { CtaBannerWireframe } from "@/components/wireframe/cta-banner-wireframe"
+import { FaqWireframe } from "@/components/wireframe/faq-wireframe"
+import { PricingWireframe } from "@/components/wireframe/pricing-wireframe"
+import { ProcessWireframe } from "@/components/wireframe/process-wireframe"
+import { StatsWireframe } from "@/components/wireframe/stats-wireframe"
+import { LogosWireframe } from "@/components/wireframe/logos-wireframe"
 import { wireframeHero } from "@/content/wireframe/hero"
 import { wireframeHeroSplit } from "@/content/wireframe/hero-split"
 import { wireframeServicesEditorial } from "@/content/wireframe/services-editorial"
@@ -29,6 +38,15 @@ import { wireframeServicesIconGrid } from "@/content/wireframe/services-icon-gri
 import { wireframeFeaturesSplit } from "@/content/wireframe/features-split"
 import { wireframeReviews } from "@/content/wireframe/reviews"
 import { wireframePortfolio } from "@/content/wireframe/portfolio"
+import { wireframeNav } from "@/content/wireframe/nav"
+import { wireframeFooter } from "@/content/wireframe/footer"
+import { wireframeContact } from "@/content/wireframe/contact"
+import { wireframeCtaBanner } from "@/content/wireframe/cta-banner"
+import { wireframeFaq } from "@/content/wireframe/faq"
+import { wireframePricing } from "@/content/wireframe/pricing"
+import { wireframeProcess } from "@/content/wireframe/process"
+import { wireframeStats } from "@/content/wireframe/stats"
+import { wireframeLogos } from "@/content/wireframe/logos"
 
 export default function HomePage() {
   return (
@@ -103,6 +121,60 @@ export default function HomePage() {
           <PortfolioSection content={tomArtPortfolio} />
           <ComponentLabel label="Mosaic: 1F + 2N + 1W (4 items)" variant="wireframe" />
           <PortfolioWireframe content={wireframePortfolio} />
+        </SectionGroup>
+
+        {/* ── Nav ────────────────────────────────────────── */}
+        <SectionGroup title="Nav" href="/nav">
+          <ComponentLabel label="Fixed navbar: logo + links pill + CTA + mobile menu" variant="wireframe" />
+          <NavWireframe content={wireframeNav} />
+        </SectionGroup>
+
+        {/* ── CTA Banner ─────────────────────────────────── */}
+        <SectionGroup title="CTA Banner" href="/cta-banner">
+          <ComponentLabel label="Centered: icon + headline + subtitle + 2 buttons" variant="wireframe" />
+          <CtaBannerWireframe content={wireframeCtaBanner} />
+        </SectionGroup>
+
+        {/* ── Process ────────────────────────────────────── */}
+        <SectionGroup title="Process" href="/process">
+          <ComponentLabel label="Vertical step cards: badge + title + description" variant="wireframe" />
+          <ProcessWireframe content={wireframeProcess} />
+        </SectionGroup>
+
+        {/* ── Stats ──────────────────────────────────────── */}
+        <SectionGroup title="Stats" href="/stats">
+          <ComponentLabel label="4-col grid: icon + value + label, dividers" variant="wireframe" />
+          <StatsWireframe content={wireframeStats} />
+        </SectionGroup>
+
+        {/* ── Logos ──────────────────────────────────────── */}
+        <SectionGroup title="Logos" href="/logos">
+          <ComponentLabel label="6-col grid: logo placeholders in bordered cells" variant="wireframe" />
+          <LogosWireframe content={wireframeLogos} />
+        </SectionGroup>
+
+        {/* ── Pricing ────────────────────────────────────── */}
+        <SectionGroup title="Pricing" href="/pricing">
+          <ComponentLabel label="2-col: standard + featured tier, features checklist" variant="wireframe" />
+          <PricingWireframe content={wireframePricing} />
+        </SectionGroup>
+
+        {/* ── FAQ ────────────────────────────────────────── */}
+        <SectionGroup title="FAQ" href="/faq">
+          <ComponentLabel label="Centered title + accordion items (all expanded)" variant="wireframe" />
+          <FaqWireframe content={wireframeFaq} />
+        </SectionGroup>
+
+        {/* ── Contact ────────────────────────────────────── */}
+        <SectionGroup title="Contact" href="/contact">
+          <ComponentLabel label="2-col: info/image left + form right" variant="wireframe" />
+          <ContactWireframe content={wireframeContact} />
+        </SectionGroup>
+
+        {/* ── Footer ─────────────────────────────────────── */}
+        <SectionGroup title="Footer" href="/footer">
+          <ComponentLabel label="CTA row + 4-col grid (brand, contact, links) + copyright" variant="wireframe" />
+          <FooterWireframe content={wireframeFooter} />
         </SectionGroup>
       </main>
     </div>

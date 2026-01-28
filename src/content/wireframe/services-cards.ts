@@ -37,7 +37,7 @@ export const wireframeCards3Cta: ServiceCardsContent = {
   ctaCard: {
     title: "Need Something Custom?",
     description: "We can tailor our services to your specific needs.",
-    buttonText: "Get in Touch",
+    buttonText: "Book a Call",
   },
 }
 
@@ -48,6 +48,6 @@ export const wireframeCards5Cta: ServiceCardsContent = {
   ctaCard: {
     title: "Need Something Custom?",
     description: "We can tailor our services to your specific needs.",
-    buttonText: "Get in Touch",
+    buttonText: "Book a Call",
   },
 }

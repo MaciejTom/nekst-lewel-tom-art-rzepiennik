@@ -6,8 +6,8 @@ export const wireframeHeroSplit: HeroSplitContent = {
   headlineAccent: "Accent Phrase.",
   subtitle:
     "Short description of this section, its value proposition and what the visitor should expect to find.",
-  ctaPrimary: { text: "Primary Action" },
-  ctaSecondary: { text: "Secondary Action" },
+  ctaPrimary: { text: "Get a Free Quote" },
+  ctaSecondary: { text: "Our Process" },
   stats: [
     { icon: "icon", value: "00+", label: "Stat Label One" },
     { icon: "icon", value: "000+", label: "Stat Label Two" },

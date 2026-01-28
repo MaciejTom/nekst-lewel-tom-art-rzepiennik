@@ -39,7 +39,7 @@ export const wireframeIconGrid3Cta: ServiceIconGridContent = {
   ctaCard: {
     title: "Need Something Custom?",
     description: "We can tailor our services to your specific needs.",
-    buttonText: "Get in Touch",
+    buttonText: "Schedule a Demo",
   },
 }
 
@@ -50,6 +50,6 @@ export const wireframeIconGrid4Cta: ServiceIconGridContent = {
   ctaCard: {
     title: "Need Something Custom?",
     description: "We can tailor our services to your specific needs.",
-    buttonText: "Get in Touch",
+    buttonText: "Schedule a Demo",
   },
 }

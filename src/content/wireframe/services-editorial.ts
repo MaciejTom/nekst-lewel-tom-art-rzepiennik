@@ -63,7 +63,7 @@ export const wireframeServicesEditorial: ServiceEditorialContent = {
     title: "Looking for something specific?",
     description:
       "Every project is different. If you don't see what you need, get in touch.",
-    buttonText: "Call to Action",
+    buttonText: "Request a Consultation",
     buttonIcon: "icon",
   },
 }

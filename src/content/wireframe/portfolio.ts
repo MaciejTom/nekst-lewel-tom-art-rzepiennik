@@ -27,7 +27,7 @@ const base: Pick<PortfolioContent, "tagline" | "title" | "titleAccent" | "stats"
     { value: "00+", label: "Stat Label" },
     { value: "00%", label: "Stat Label", highlight: true },
   ],
-  galleryButton: { text: "Button Label", href: "#" },
+  galleryButton: { text: "View All Projects", href: "#" },
 }
 
 // ── MOSAIC (CSS grid 4-col — featured/wide items) ──

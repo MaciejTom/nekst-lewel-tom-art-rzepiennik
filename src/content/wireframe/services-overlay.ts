@@ -22,7 +22,7 @@ export const wireframeServicesOverlay: ServiceOverlayContent = {
   services: [item(1), item(2), item(3), item(4), item(5)],
   cta: {
     text: "Looking for something else?",
-    buttonText: "Call to Action",
+    buttonText: "Explore All Services",
     buttonIcon: "icon",
   },
 }
@@ -46,7 +46,7 @@ export const wireframeOverlay3Cta: ServiceOverlayContent = {
   ctaCard: {
     title: "Need Something Custom?",
     description: "We can tailor our services to your specific needs.",
-    buttonText: "Get in Touch",
+    buttonText: "Contact Us",
   },
 }
 
@@ -57,6 +57,6 @@ export const wireframeOverlay5Cta: ServiceOverlayContent = {
   ctaCard: {
     title: "Need Something Custom?",
     description: "We can tailor our services to your specific needs.",
-    buttonText: "Get in Touch",
+    buttonText: "Contact Us",
   },
 }

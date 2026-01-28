@@ -13,5 +13,5 @@ export const wireframeFeaturesSplit: FeaturesSplitContent = {
     "Feature point five",
     "Feature point six",
   ],
-  cta: { text: "Call to Action" },
+  cta: { text: "Explore Features" },
 }
