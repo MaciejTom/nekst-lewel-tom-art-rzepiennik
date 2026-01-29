@@ -7,7 +7,7 @@ Styl: glossy plastic toy-like, navy blue + bright red, rounded edges, isometric 
 3D render of a wrench tool, glossy plastic toy-like material, rounded smooth edges, navy blue handle with bright red metal wrench head, isometric angle, soft lighting, transparent background, high quality render
 ```
 
-## 2. MapPin (Lokalnie)
+## 2. MapPin (Lokalnie) ✓ DONE
 ```
 3D render of a location pin marker icon, glossy plastic toy-like material, rounded smooth edges, navy blue pin body with bright red circular top, isometric angle, soft lighting, transparent background, high quality render, same style as 3D toy wrench
 ```
@@ -30,6 +30,6 @@ Styl: glossy plastic toy-like, navy blue + bright red, rounded edges, isometric 
 
 ## Pliki docelowe
 - `/public/images/tom-art/icons/wrench.png` ✓
-- `/public/images/tom-art/icons/map-pin.png`
+- `/public/images/tom-art/icons/map-pin.png` ✓
 - `/public/images/tom-art/icons/phone.png`
 - `/public/images/tom-art/icons/check.png`
