@@ -8,7 +8,7 @@ import {
   wireframeCards3Cta,
   wireframeCards5Cta,
 } from "@/content/wireframe/services-cards"
-import { tomArtServices } from "@/content/tom-art/services"
+import { tomArtServices } from "@/content/tom-art/services-cards"
 
 export default function ServicesCardsPage() {
   return (

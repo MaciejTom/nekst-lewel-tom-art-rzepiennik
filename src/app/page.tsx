@@ -7,7 +7,7 @@ import { ServicesCardsSection } from "@/components/sections/services-cards-secti
 import { PortfolioSection } from "@/components/sections/portfolio-section"
 import { tomArtServicesEditorial } from "@/content/tom-art/services-editorial"
 import { tomArtServicesOverlay } from "@/content/tom-art/services-overlay"
-import { tomArtServices } from "@/content/tom-art/services"
+import { tomArtServices } from "@/content/tom-art/services-cards"
 import { tomArtPortfolio } from "@/content/tom-art/portfolio"
 
 // Wireframes

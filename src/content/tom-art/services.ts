@@ -1,59 +1,45 @@
-import type { ServiceCardsContent } from "@/types"
+import type { ServiceIconGridContent } from "@/types"
 
-export const tomArtServices: ServiceCardsContent = {
-  title: "Od ścian po podłogi — pełen zakres prac remontowych",
-  subtitle: "Zrobię to, co trzeba — od drobnych poprawek po remont całego domu. Każdą pracę wyceniam na miejscu, bez niespodzianek.",
-
+export const servicesContent: ServiceIconGridContent = {
+  tagline: "Zakres uslug",
+  title: "Od scian po podlogi — pelny zakres prac remontowych",
+  subtitle:
+    "Zrobie to, co trzeba — od drobnych poprawek po remont calego domu. Kazda prace wyceniam na miejscu, bez niespodzianek.",
   services: [
     {
-      title: "Tynki i gładzie — Rzepiennik, Tuchów, okolice Tarnowa",
-      description: "Równe ściany to podstawa dobrego remontu. Nakładam tynki cementowo-wapienne i gipsowe, robię gładzie pod malowanie. Doradzę, który tynk sprawdzi się u Ciebie.",
-      features: [
-        "Tynki tradycyjne i maszynowe",
-        "Gładzie gipsowe pod malowanie",
-        "Wyrównywanie starych ścian",
-      ],
-      image: "/nowe.png",
+      icon: "Paintbrush",
+      title: "Tynki i gladzie",
+      description:
+        "Rowne sciany to podstawa dobrego remontu. Nakladam tynki cementowo-wapienne i gipsowe, robie gladzie pod malowanie. Doradze, ktory tynk sprawdzi sie u Ciebie.",
     },
     {
-      title: "Posadzki, wylewki, układanie podłóg",
-      description: "Od wylewki po gotową podłogę. Przygotuję podłoże, ułożę panele, płytki lub parkiet — w zależności od tego, czego potrzebujesz.",
-      features: [
-        "Wylewki samopoziomujące",
-        "Układanie paneli i płytek podłogowych",
-        "Tapetowanie i oblicowywanie ścian",
-      ],
-      image: "/nowe2.png",
+      icon: "Grid3X3",
+      title: "Posadzki i podlogi",
+      description:
+        "Od wylewki po gotowa podloge. Przygotuje podloze, uloze panele, plytki lub parkiet — w zaleznosci od tego, czego potrzebujesz.",
     },
     {
-      title: "Malowanie ścian, szklenie, drobne wykończenia",
-      description: "Malowanie to nie tylko kolor na ścianie. Dobrze przygotowane podłoże i staranny finish robią różnicę. Szklenie okien, drobne prace wykończeniowe — zrobię to rzetelnie.",
-      features: [
-        "Malowanie ścian i sufitów",
-        "Szklenie okien",
-        "Wykończenia detali (listwy, narożniki)",
-      ],
-      image: "/nowe3.png",
+      icon: "Palette",
+      title: "Malowanie i wykonczenia",
+      description:
+        "Malowanie to nie tylko kolor na scianie. Dobrze przygotowane podloze i staranny finish robia roznice. Szklenie okien, drobne prace wykonczeniowe — zrobie to rzetelnie.",
     },
     {
-      title: "Roboty murarskie, budowa ścian, fundamenty",
-      description: "Stawiam ściany nośne i działowe, robię domurowywania i przeróbki. Podejmę się też budowy od podstaw — budynki mieszkalne i niemieszkalne.",
-      features: [
-        "Murowanie ścian z bloczków i cegły",
-        "Budowa budynków mieszkalnych",
-        "Przebudowy i domurowywania",
-      ],
-      image: "/nowe.png",
+      icon: "Hammer",
+      title: "Murarstwo i budowa",
+      description:
+        "Stawiam sciany nosne i dzialowe, robie domurowywania i przerobki. Podejme sie tez budowy od podstaw — budynki mieszkalne i niemieszkalne.",
     },
     {
-      title: "Montaż izolacji, instalacje budowlane",
-      description: "Ciepło w domu zaczyna się od dobrej izolacji. Montuję izolacje termiczne i przeciwwilgociowe. Wykonuję też pozostałe instalacje budowlane.",
-      features: [
-        "Izolacje termiczne (styropian, wełna)",
-        "Izolacje przeciwwilgociowe",
-        "Instalacje budowlane",
-      ],
-      image: "/nowe2.png",
+      icon: "Thermometer",
+      title: "Izolacje i instalacje",
+      description:
+        "Cieplo w domu zaczyna sie od dobrej izolacji. Montuje izolacje termiczne i przeciwwilgociowe. Wykonuje tez pozostale instalacje budowlane.",
     },
   ],
+  ctaCard: {
+    title: "Potrzebujesz wyceny?",
+    description: "Zadzwon, przyjde na miejsce i wycenie bezplatnie.",
+    buttonText: "Zadzwon: 690 651 606",
+  },
 }
