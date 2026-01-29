@@ -12,12 +12,12 @@ Styl: glossy plastic toy-like, navy blue + bright red, rounded edges, isometric 
 3D render of a location pin marker icon, glossy plastic toy-like material, rounded smooth edges, navy blue pin body with bright red circular top, isometric angle, soft lighting, transparent background, high quality render, same style as 3D toy wrench
 ```
 
-## 3. Phone (Bez pośredników)
+## 3. Phone (Bez pośredników) ✓ DONE
 ```
 3D render of a mobile phone handset icon, glossy plastic toy-like material, rounded smooth edges, navy blue phone body with bright red earpiece and buttons, isometric angle, soft lighting, transparent background, high quality render, same style as 3D toy wrench
 ```
 
-## 4. CheckCircle (Przejrzysty proces)
+## 4. CheckCircle (Przejrzysty proces) ✓ DONE
 ```
 3D render of a checkmark badge icon, glossy plastic toy-like material, rounded smooth edges, navy blue circular badge with bright red checkmark in center, isometric angle, soft lighting, transparent background, high quality render, same style as 3D toy wrench
 ```
@@ -31,5 +31,5 @@ Styl: glossy plastic toy-like, navy blue + bright red, rounded edges, isometric 
 ## Pliki docelowe
 - `/public/images/tom-art/icons/wrench.png` ✓
 - `/public/images/tom-art/icons/map-pin.png` ✓
-- `/public/images/tom-art/icons/phone.png`
-- `/public/images/tom-art/icons/check.png`
+- `/public/images/tom-art/icons/phone.png` ✓
+- `/public/images/tom-art/icons/check.png` ✓
