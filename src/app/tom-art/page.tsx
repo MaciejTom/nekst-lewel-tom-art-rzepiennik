@@ -320,12 +320,17 @@ function WhyUsSection() {
         {/* USP grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {whyUsContent.services.map((usp, index) => {
-            const Icon = iconMap[usp.icon] || CheckCircle
             return (
               <div key={index} className="flex gap-5">
-                {/* Icon */}
-                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center shrink-0">
-                  <Icon className="w-6 h-6 text-primary" />
+                {/* 3D Icon */}
+                <div className="w-16 h-16 shrink-0">
+                  <Image
+                    src="/images/tom-art/icons/wrench.png"
+                    alt=""
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
 
                 {/* Text */}
