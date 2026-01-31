@@ -357,12 +357,11 @@ function ProcessSection() {
 // ===========================================
 // WHY US SECTION
 // ===========================================
-// Map icon names to PNG files
 const iconImageMap: Record<string, string> = {
   Wrench: "/images/tom-art/icons/wrench.png",
   MapPin: "/images/tom-art/icons/map-pin.png",
-  Phone: "/images/tom-art/icons/phone.png",
-  CheckCircle: "/images/tom-art/icons/check.png",
+  Phone: "/images/tom-art/icons/direct-contact.png",
+  CheckCircle: "/images/tom-art/icons/checks.png",
 }
 
 function WhyUsSection() {
@@ -371,7 +370,7 @@ function WhyUsSection() {
       {/* Background Texture */}
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "32px 32px" }}></div>
       <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary to-black/20" />
-
+      
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-20 max-w-3xl mx-auto">
@@ -382,11 +381,12 @@ function WhyUsSection() {
         </div>
 
         {/* USP grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">
           {whyUsContent.services.map((usp, index) => {
             const iconSrc = iconImageMap[usp.icon] || iconImageMap.Wrench
+
             return (
-              <div key={index} className="group bg-white/5 p-8 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 flex flex-col items-center text-center gap-6 hover:-translate-y-2">
+              <div key={index} className="group transition-all duration-300 flex flex-col items-center text-center gap-6 hover:-translate-y-2">
                 {/* Icon Container */}
                 <div className="relative w-32 h-32 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                    {/* Paint accent */}
@@ -398,8 +398,7 @@ function WhyUsSection() {
                          <path d="M42.7,-63.3C54.6,-54.3,63.1,-41.8,69.2,-28.6C75.3,-15.4,79,-1.5,75.3,10.8C71.6,23.1,60.6,33.8,49.5,43.2C38.4,52.6,27.2,60.7,14.6,65.3C2,69.9,-12,71,-24.8,66.3C-37.6,61.6,-49.2,51.1,-58.4,39.2C-67.6,27.3,-74.4,14,-73.4,1.3C-72.4,-11.4,-63.6,-23.5,-53.4,-33.8C-43.2,-44.1,-31.6,-52.6,-19.6,-61.5C-7.6,-70.4,4.8,-79.7,17.4,-79.9C30,-80.1,42.7,-71.2,42.7,-63.3Z" transform="translate(100 100) scale(1.1)" />
                       </svg>
                    </div>
-
-                   {/* Dynamic 3D Icon */}
+                   
                    <Image
                      src={iconSrc}
                      alt={usp.title}
