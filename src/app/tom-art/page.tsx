@@ -801,7 +801,6 @@ export default function TomArtPage() {
     <main className="selection:bg-primary/20 selection:text-primary">
       <NavSection />
       <HeroSection />
-      <ServicesSection />
       <ServicesEditorialSection content={tomArtServicesEditorial} />
       <ProcessSection />
       <WhyUsSection />
