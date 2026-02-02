@@ -5,11 +5,13 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,9 +25,9 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     images: [
       {
-        url: "/images/tom-art/hero.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/tom-art/hero.webp",
+        width: 1408,
+        height: 768,
         alt: "TOM-ART - profesjonalne usługi remontowe",
       },
     ],
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TOM-ART | Usługi remontowo-budowlane",
     description: "Od ścian po podłogi — pełen zakres prac remontowych.",
-    images: ["/images/tom-art/hero.jpg"],
+    images: ["/images/tom-art/hero.webp"],
   },
 };
 
@@ -45,12 +47,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl" suppressHydrationWarning>
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased`}>
         {children}
       </body>

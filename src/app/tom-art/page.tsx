@@ -131,11 +131,13 @@ function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/tom-art/hero.jpg"
+          src="/images/tom-art/hero.webp"
           alt="Odnowione wnetrze domu"
           fill
           className="object-cover"
           priority
+          sizes="100vw"
+          quality={90}
         />
         {/* Gradient overlay for text readability - tweaked for better visibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20 sm:to-transparent" />
@@ -404,6 +406,7 @@ function WhyUsSection() {
                      alt={usp.title}
                      width={110}
                      height={110}
+                     sizes="(max-width: 768px) 80px, 110px"
                      className="w-full h-full object-contain drop-shadow-2xl relative z-10"
                    />
                 </div>
