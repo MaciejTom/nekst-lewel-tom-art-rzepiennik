@@ -708,7 +708,7 @@ function ContactSection() {
 function Footer() {
   return (
     <footer className="bg-secondary text-white pt-24 pb-12 relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
@@ -718,9 +718,9 @@ function Footer() {
             <a href="/" className="inline-block text-4xl font-bold tracking-tight mb-6 text-white">
               TOM-ART
             </a>
-            <p className="text-gray-400 leading-relaxed text-lg mb-8 max-w-md">
+            <p className="text-gray-300 leading-relaxed text-lg mb-8 max-w-md">
               Profesjonalne usługi remontowo-wykończeniowe. <br/>
-              Specjalizujemy się w kompleksowych realizacjach wnętrz na terenie Rzepiennika i okolic Tarnowa.
+              Kompleksowe remonty wnętrz na terenie Rzepiennika i okolic Tarnowa.
             </p>
           </div>
 
@@ -733,9 +733,9 @@ function Footer() {
             <ul className="space-y-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a 
-                    href={link.href} 
-                    className="text-gray-400 hover:text-primary hover:pl-2 transition-all flex items-center gap-2"
+                  <a
+                    href={link.href}
+                    className="text-gray-300 hover:text-primary hover:pl-2 transition-all flex items-center gap-2"
                   >
                     <span className="w-1 h-1 rounded-full bg-primary opacity-0 hover:opacity-100 transition-opacity" />
                     {link.label}
@@ -756,23 +756,23 @@ function Footer() {
                 <a href="tel:690651606" className="group flex items-center gap-4 hover:text-primary transition-colors">
                    <Phone className="w-8 h-8 text-primary" />
                    <div>
-                      <span className="block text-xs text-gray-500 uppercase tracking-wider mb-0.5">Zadzwoń teraz</span>
+                      <span className="block text-xs text-gray-400 uppercase tracking-wider mb-0.5">Zadzwoń teraz</span>
                       <span className="text-2xl font-bold text-white group-hover:text-primary transition-colors">690 651 606</span>
                    </div>
                 </a>
               </li>
               <li className="flex items-center gap-4">
-                 <FileText className="w-8 h-8 text-primary/50" />
+                 <FileText className="w-8 h-8 text-primary/70" />
                  <div>
-                    <span className="block text-xs text-gray-500 uppercase tracking-wider mb-0.5">Dane firmowe</span>
-                    <span className="text-lg text-gray-300">NIP: 9930712739</span>
+                    <span className="block text-xs text-gray-400 uppercase tracking-wider mb-0.5">Dane firmowe</span>
+                    <span className="text-lg text-gray-200">NIP: 9930712739</span>
                  </div>
               </li>
               <li className="flex items-center gap-4">
-                 <MapPin className="w-8 h-8 text-primary/50" />
+                 <MapPin className="w-8 h-8 text-primary/70" />
                  <div>
-                    <span className="block text-xs text-gray-500 uppercase tracking-wider mb-0.5">Lokalizacja</span>
-                    <span className="text-lg text-gray-300">Rzepiennik Suchy i okolice</span>
+                    <span className="block text-xs text-gray-400 uppercase tracking-wider mb-0.5">Lokalizacja</span>
+                    <span className="text-lg text-gray-200">Rzepiennik Suchy i okolice</span>
                  </div>
               </li>
             </ul>
@@ -780,14 +780,12 @@ function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/5 pt-10 mt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
-          <p>&copy; {new Date().getFullYear()} TOM-ART Tomasz Wszolek.</p>
+        <div className="border-t border-white/10 pt-10 mt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-400">
+          <p>&copy; {new Date().getFullYear()} TOM-ART Tomasz Wszołek. Wszelkie prawa zastrzeżone.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-white transition-colors">Polityka prywatnosci</a>
-            <span className="w-1 h-1 bg-gray-700 rounded-full" />
-            <a href="#" className="hover:text-white transition-colors">Regulamin</a>
-            <span className="w-1 h-1 bg-gray-700 rounded-full" />
-            <p>Realizacja: <span className="text-white font-semibold">Nekst Lewel</span></p>
+            <a href="#" className="hover:text-primary transition-colors">Polityka prywatności</a>
+            <span className="w-1 h-1 bg-gray-600 rounded-full" />
+            <a href="#" className="hover:text-primary transition-colors">Regulamin</a>
           </div>
         </div>
       </div>
