@@ -139,9 +139,9 @@ function HeroSection() {
           sizes="100vw"
           quality={90}
         />
-        {/* Gradient overlay for text readability - tweaked for better visibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20 sm:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 via-40% to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 py-40 relative z-10">
