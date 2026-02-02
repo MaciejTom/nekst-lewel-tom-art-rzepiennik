@@ -15,6 +15,26 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "TOM-ART | Usługi remontowo-budowlane",
   description: "Od ścian po podłogi — pełen zakres prac remontowych. Tynki, posadzki, malowanie, murarstwo, izolacje. Rzepiennik, Tuchów, okolice Tarnowa.",
+  openGraph: {
+    title: "TOM-ART | Usługi remontowo-budowlane",
+    description: "Od ścian po podłogi — pełen zakres prac remontowych. Tynki, posadzki, malowanie, murarstwo, izolacje. Rzepiennik, Tuchów, okolice Tarnowa.",
+    type: "website",
+    locale: "pl_PL",
+    images: [
+      {
+        url: "/images/tom-art/hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TOM-ART - profesjonalne usługi remontowe",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TOM-ART | Usługi remontowo-budowlane",
+    description: "Od ścian po podłogi — pełen zakres prac remontowych.",
+    images: ["/images/tom-art/hero.jpg"],
+  },
 };
 
 export default function RootLayout({

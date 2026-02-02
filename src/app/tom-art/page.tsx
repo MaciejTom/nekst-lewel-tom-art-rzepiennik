@@ -86,7 +86,7 @@ function NavSection() {
       <div className="container mx-auto px-6 h-full">
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
-          <a href="#" className="text-2xl font-bold text-foreground tracking-tight">
+          <a href="/" className="text-2xl font-bold text-foreground tracking-tight">
             TOM-ART
           </a>
 
@@ -666,12 +666,14 @@ function ContactSection() {
                         {field.type === "textarea" ? (
                           <textarea
                             placeholder={field.placeholder}
+                            required
                             className="w-full bg-muted/20 border border-border/60 rounded-lg px-5 py-4 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm min-h-[220px] resize-none"
                           />
                         ) : (
                           <input
                             type={field.type}
                             placeholder={field.placeholder}
+                            required
                             className="w-full bg-muted/20 border border-border/60 rounded-lg px-5 py-4 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary focus:bg-white transition-all duration-300 shadow-sm"
                           />
                         )}
@@ -713,7 +715,7 @@ function Footer() {
           
           {/* Brand Column */}
           <div className="lg:col-span-5 pr-8">
-            <a href="#" className="inline-block text-4xl font-bold tracking-tight mb-6 text-white">
+            <a href="/" className="inline-block text-4xl font-bold tracking-tight mb-6 text-white">
               TOM-ART
             </a>
             <p className="text-gray-400 leading-relaxed text-lg mb-8 max-w-md">
